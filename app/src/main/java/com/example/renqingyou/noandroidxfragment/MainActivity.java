@@ -1,13 +1,15 @@
 package com.example.renqingyou.noandroidxfragment;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 
-import android.util.Log;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.Toast;
 
 
@@ -23,6 +25,24 @@ public class MainActivity extends AppCompatActivity {
                 popDialog();
             }
         });
+
+        findViewById(R.id.tabLayout).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,MyTabLayout.class);
+                startActivity(intent);
+            }
+        });
+
+        SwitchCompat switchCompat = findViewById(R.id.switch_compat);
+        switchCompat.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+            }
+        });
+
+
     }
 
     /**
