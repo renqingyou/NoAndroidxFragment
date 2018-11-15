@@ -4,6 +4,7 @@ package com.example.renqingyou.noandroidxfragment;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.appcompat.widget.AppCompatButton;
 import android.view.LayoutInflater;
@@ -47,4 +48,5 @@ public class TestFragment extends Fragment {
     public void onHiddenChanged(boolean hidden) {
         super.onHiddenChanged(hidden);
     }
+
 }

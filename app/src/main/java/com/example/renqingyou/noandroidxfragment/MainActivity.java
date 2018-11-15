@@ -59,7 +59,10 @@ public class MainActivity extends AppCompatActivity {
                 dialog.dismiss();
             }
         });
-        AlertDialog dialog = builder.create();
+
+        //两种方式显示Dialog
+
+        /*AlertDialog dialog = builder.create();
         //对话框显示的监听事件
         dialog.setOnShowListener(new DialogInterface.OnShowListener() {
             @Override
@@ -75,6 +78,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         //显示对话框
-        dialog.show();
+        dialog.show();*/
+
+        builder.show();
+
     }
 }

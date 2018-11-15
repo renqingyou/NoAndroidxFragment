@@ -7,6 +7,6 @@
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Fragment 上的 Button"
+        android:text="测试Dialog"
         android:textAllCaps="false" />
 </androidx.constraintlayout.widget.ConstraintLayout>
