@@ -29,5 +29,4 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation(name:'SensorsAnalyticsSDK-release', ext:'aar')
     testImplementation 'junit:junit:4.12'
-
 }

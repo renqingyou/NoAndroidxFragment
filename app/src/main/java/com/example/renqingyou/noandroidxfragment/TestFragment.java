@@ -2,6 +2,7 @@ package com.example.renqingyou.noandroidxfragment;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,7 +25,7 @@ public class TestFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Toast.makeText(view.getContext(),"我是fragment上的button",Toast.LENGTH_SHORT).show();
-                SensorsDataAPI.sharedInstance().trackViewScreen(this);
+                SensorsDataAPI.sharedInstance().trackViewScreen(TestFragment.this);
             }
         });
         return view;

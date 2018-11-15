@@ -18,5 +18,7 @@ public class MainActivity extends Activity {
                 Toast.makeText(MainActivity.this,"我是Actvity上的text",Toast.LENGTH_SHORT).show();
             }
         });
+
     }
+
 }
