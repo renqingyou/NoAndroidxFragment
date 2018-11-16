@@ -58,7 +58,7 @@ public class NavigationViewActivity extends AppCompatActivity{
             return true;
         });
 
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+     /*   navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 // Handle navigation view item clicks here.
@@ -81,7 +81,7 @@ public class NavigationViewActivity extends AppCompatActivity{
                 mDrawerLayout.closeDrawer(GravityCompat.START);
                 return true;
             }
-        });
+        });*/
     }
 
     @Override

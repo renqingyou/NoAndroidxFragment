@@ -36,7 +36,7 @@ android {
 
 repositories {
     flatDir {
-        dirs '/Users/renqingyou/gitlab/sa-sdk-android/SensorsAnalyticsSDK/build/outputs/aar'
+        dirs '/Users/renqingyou/Desktop'
     }
 }
 
