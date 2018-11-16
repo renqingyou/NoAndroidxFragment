@@ -3,11 +3,9 @@ package com.example.renqingyou.noandroidxfragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -32,16 +30,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        NavigationView navigationView = new NavigationView(this);
+        findViewById(R.id.navigationView).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,NavigationViewActivity.class);
+                startActivity(intent);
+            }
+        });
 
+
+        //NavigationView navigationView = new NavigationView(this);
         /*navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 return false;
             }
         });*/
-
-        navigationView.setNavigationItemSelectedListener(menuItem -> false);
+        //navigationView.setNavigationItemSelectedListener(menuItem -> false);
 
     }
 
