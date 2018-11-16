@@ -6,11 +6,12 @@ buildscript {
         google()
         jcenter()
         maven {
-            url uri('/Users/renqingyou/Desktop/androidx/repo')
+            url uri('/Users/renqingyou/Documents/repo')
         }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath 'me.tatarka:gradle-retrolambda:3.2.0'
         classpath 'com.sensorsdata.analytics.android:android-gradle-plugin2:2.2.2'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files

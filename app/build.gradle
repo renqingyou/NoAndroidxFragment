@@ -17,12 +17,20 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 repositories {
     flatDir {
-        dirs '/Users/renqingyou/Desktop/androidx'
+        dirs 'libs'
     }
+}
+
+sensorsAnalytics {
+    debug = true
 }
 
 dependencies {
