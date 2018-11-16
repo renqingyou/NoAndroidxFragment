@@ -11,6 +11,9 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        sensorsAnalytics {
+            debug = true
+        }
 
     }
 
@@ -33,7 +36,7 @@ android {
 
 repositories {
     flatDir {
-        dirs '/Users/renqingyou/Desktop/androidx'
+        dirs '/Users/renqingyou/gitlab/sa-sdk-android/SensorsAnalyticsSDK/build/outputs/aar'
     }
 }
 

@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.Toast;
 
+import com.sensorsdata.analytics.android.sdk.SensorsDataTrackEvent;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,6 +36,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.navigation).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,NavigationViewActivity.class);
+                startActivity(intent);
+            }
+        });
+
         SwitchCompat switchCompat = findViewById(R.id.switch_compat);
         switchCompat.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -48,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * 提示对话框
      */
+    @SensorsDataTrackEvent(eventName = "someEventName", properties = "{\"provider\":\"神策数据\",\"number\":100,\"isLogin\":true}")
     public void popDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("问题：");

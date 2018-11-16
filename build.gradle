@@ -6,7 +6,7 @@ buildscript {
         google()
         jcenter()
         maven {
-            url uri('/Users/renqingyou/Desktop/androidx/repo')
+            url uri('/Users/renqingyou/Documents/repo')
         }
     }
     dependencies {
