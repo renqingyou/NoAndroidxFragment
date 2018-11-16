@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.sensorsdata.analytics.android'
+//apply plugin: 'me.tatarka.retrolambda'
 
 android {
     compileSdkVersion 28
@@ -10,7 +11,9 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -18,17 +21,22 @@ android {
         }
     }
 
-    dataBinding
-            {
+    dataBinding {
                 enabled true
-            }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 repositories {
     flatDir {
-        dirs 'libs'
+        dirs '/Users/renqingyou/Desktop/androidx'
     }
 }
+
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])

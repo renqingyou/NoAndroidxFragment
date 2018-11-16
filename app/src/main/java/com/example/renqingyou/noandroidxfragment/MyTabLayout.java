@@ -31,12 +31,31 @@ public class MyTabLayout extends AppCompatActivity {
         }
         final Toast toast = Toast.makeText(this, "", Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.CENTER, 0, 0);
+
         //设置tab的点击监听器
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 toast.setText(tab.getPosition() + ":" + tab.getText());
                 toast.show();
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+
             }
 
             @Override
@@ -67,5 +86,23 @@ public class MyTabLayout extends AppCompatActivity {
             }
         });
         setContentView(tabLayout);
+    }
+
+    class A implements TabLayout.OnTabSelectedListener{
+
+        @Override
+        public void onTabSelected(TabLayout.Tab tab) {
+
+        }
+
+        @Override
+        public void onTabUnselected(TabLayout.Tab tab) {
+
+        }
+
+        @Override
+        public void onTabReselected(TabLayout.Tab tab) {
+
+        }
     }
 }
