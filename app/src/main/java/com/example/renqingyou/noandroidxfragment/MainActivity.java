@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SwitchCompat;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.Toast;
 
 
@@ -47,6 +49,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });*/
         //navigationView.setNavigationItemSelectedListener(menuItem -> false);
+
+        SwitchCompat switchCompat = findViewById(R.id.switch_compat);
+        switchCompat.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+            }
+        });
+
+        switchCompat.setOnCheckedChangeListener((compoundButton, b) -> {
+
+        });
 
     }
 
