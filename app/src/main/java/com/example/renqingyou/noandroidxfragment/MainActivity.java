@@ -3,11 +3,12 @@ package com.example.renqingyou.noandroidxfragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.NavigationView;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SwitchCompat;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Toast;
 
@@ -60,6 +61,14 @@ public class MainActivity extends AppCompatActivity {
 
         switchCompat.setOnCheckedChangeListener((compoundButton, b) -> {
 
+        });
+
+        findViewById(R.id.viewPager).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,ViewPagerActivity.class);
+                startActivity(intent);
+            }
         });
 
     }
