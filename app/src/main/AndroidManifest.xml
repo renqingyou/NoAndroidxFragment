@@ -21,6 +21,7 @@
         <activity android:name=".NavigationViewActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"
             />
+        <activity android:name=".ViewPagerActivity"/>
     </application>
 
 </manifest>
