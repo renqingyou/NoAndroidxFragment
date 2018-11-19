@@ -20,5 +20,22 @@ public class ViewPagerActivity extends AppCompatActivity {
                 Log.e("rqy","viewPager");
             }
         });*/
+
+        mGuideVp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int i, float v, int i1) {
+
+            }
+
+            @Override
+            public void onPageSelected(int i) {
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int i) {
+
+            }
+        });
     }
 }
