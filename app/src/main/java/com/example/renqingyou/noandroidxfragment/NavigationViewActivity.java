@@ -8,8 +8,10 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class NavigationViewActivity extends AppCompatActivity {
@@ -33,6 +35,28 @@ public class NavigationViewActivity extends AppCompatActivity {
                 this, mDrawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         mDrawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+
+        mDrawerLayout.addDrawerListener(new DrawerLayout.DrawerListener() {
+            @Override
+            public void onDrawerSlide(@NonNull View view, float v) {
+
+            }
+
+            @Override
+            public void onDrawerOpened(@NonNull View view) {
+                Log.e("rqy","onDrawOpend");
+            }
+
+            @Override
+            public void onDrawerClosed(@NonNull View view) {
+                Log.e("rqy","onDrawClosed");
+            }
+
+            @Override
+            public void onDrawerStateChanged(int i) {
+
+            }
+        });
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         /*navigationView.setNavigationItemSelectedListener(menuItem -> {
