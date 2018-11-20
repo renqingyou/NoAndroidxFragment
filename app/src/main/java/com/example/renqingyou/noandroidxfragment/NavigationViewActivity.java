@@ -1,8 +1,10 @@
 package com.example.renqingyou.noandroidxfragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -34,6 +36,28 @@ public class NavigationViewActivity extends AppCompatActivity{
                 this, mDrawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         mDrawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+
+        mDrawerLayout.addDrawerListener(new DrawerLayout.DrawerListener() {
+            @Override
+            public void onDrawerSlide(@NonNull View drawerView, float slideOffset) {
+
+            }
+
+            @Override
+            public void onDrawerOpened(@NonNull View drawerView) {
+                Log.e("rqy","onDrawerOpened");
+            }
+
+            @Override
+            public void onDrawerClosed(@NonNull View drawerView) {
+                Log.e("rqy","onDrawerClose");
+            }
+
+            @Override
+            public void onDrawerStateChanged(int newState) {
+
+            }
+        });
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(menuItem -> {

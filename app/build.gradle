@@ -36,7 +36,7 @@ android {
 
 repositories {
     flatDir {
-        dirs '/Users/renqingyou/Desktop'
+        dirs '/Users/renqingyou/gitlab/sa-sdk-android/SensorsAnalyticsSDK/build/outputs/aar'
     }
 }
 
@@ -44,7 +44,7 @@ repositories {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation(name:'SensorsAnalyticsSDK-release', ext:'aar')
+    implementation(name:'SensorsAnalyticsSDK-debug', ext:'aar')
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'
     implementation 'com.google.android.material:material:1.0.0'
     testImplementation 'junit:junit:4.12'
