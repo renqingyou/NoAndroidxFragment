@@ -12,11 +12,10 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.sensorsdata.analytics.android.sdk.SensorsDataAPI;
+import com.sensorsdata.analytics.android.sdk.SensorsDataFragmentTitle;
 import com.sensorsdata.analytics.android.sdk.SensorsDataTrackFragmentAppViewScreen;
 
-
 @SuppressWarnings("Convert2Lambda")
-@SensorsDataTrackFragmentAppViewScreen
 public class TestFragment extends Fragment {
     @Nullable
     @Override
@@ -27,7 +26,7 @@ public class TestFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Toast.makeText(view.getContext(),"我是fragment上的button",Toast.LENGTH_SHORT).show();
-                //SensorsDataAPI.sharedInstance().trackViewScreen();
+                SensorsDataAPI.sharedInstance().trackViewScreen(TestFragment.this);
             }
         });
         return view;
