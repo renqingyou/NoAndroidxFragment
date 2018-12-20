@@ -2,6 +2,14 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.sensorsdata.analytics.android'
 
 android {
+    signingConfigs {
+        myconfig {
+            keyAlias 'sensorsdata'
+            keyPassword '123456'
+            storeFile file('Untitled')
+            storePassword '123456'
+        }
+    }
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.renqingyou.noandroidxfragment"
@@ -10,10 +18,11 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        signingConfig  signingConfigs.myconfig
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -25,7 +34,7 @@ android {
 
 repositories {
     flatDir {
-        dirs '/Users/renqingyou/gitlab/sa-sdk-android/SensorsAnalyticsSDK/build/outputs/aar'
+        dirs '/Users/jackyren/Documents/work/code/sa-sdk-android/SensorsAnalyticsSDK/build/outputs/aar'
     }
 }
 
@@ -46,7 +55,7 @@ sensorsAnalytics {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:28.0.0'
-    api(name:'SensorsAnalyticsSDK-debug', ext:'aar')
+    api(name:'SensorsAnalyticsSDK-release', ext:'aar')
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     implementation 'com.android.support:design:28.0.0'
     testImplementation 'junit:junit:4.12'
