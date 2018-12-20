@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import androidx.annotation.Nullable;
 import androidx.viewpager.widget.PagerAdapter;
 
 public class GuideAdapter extends PagerAdapter {
@@ -43,5 +44,11 @@ public class GuideAdapter extends PagerAdapter {
         imageView.setBackgroundResource(mImageId[position]);
         container.addView(imageView);
         return imageView;
+    }
+
+    @Nullable
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return "MyPageAdapter title";
     }
 }
