@@ -1,6 +1,7 @@
 package com.example.renqingyou.noandroidxfragment;
 
 import android.content.Context;
+import android.support.annotation.Nullable;
 import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,5 +43,11 @@ public class GuideAdapter extends PagerAdapter {
         imageView.setBackgroundResource(mImageId[position]);
         container.addView(imageView);
         return imageView;
+    }
+
+    @Nullable
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return "MyPage Title";
     }
 }
