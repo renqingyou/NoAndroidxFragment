@@ -18,12 +18,12 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        signingConfig  signingConfigs.myconfig
     }
     buildTypes {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig  signingConfigs.myconfig
         }
     }
     compileOptions {
@@ -41,8 +41,8 @@ repositories {
 sensorsAnalytics {
     debug = false
     useInclude = false
-    exclude = ['com.example.renqingyou.noandroidxfragment.MainActivity']
-    include = ['com.example.renqingyou.noandroidxfragment.MainActivity']
+    exclude = []
+    include = []
     sdk {
         disableIMEI = false
         disableAndroidID = false
@@ -55,7 +55,8 @@ sensorsAnalytics {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:28.0.0'
-    api(name:'SensorsAnalyticsSDK-release', ext:'aar')
+    releaseImplementation(name:'SensorsAnalyticsSDK-release', ext:'aar')
+    debugImplementation(name:'SensorsAnalyticsSDK-debug', ext:'aar')
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     implementation 'com.android.support:design:28.0.0'
     testImplementation 'junit:junit:4.12'
