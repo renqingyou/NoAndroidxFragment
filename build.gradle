@@ -6,12 +6,12 @@ buildscript {
         google()
         jcenter()
         maven {
-            url uri('/Users/jackyren/Documents/repo')
+            url uri('/Users/jackyren/Documents/work/code/sa-sdk-android-plugin2/repo')
         }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.1'
-        classpath 'com.sensorsdata.analytics.android:android-gradle-plugin2:3.0.2'
+        classpath 'com.sensorsdata.analytics.android:android-gradle-plugin2:3.0.1'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files

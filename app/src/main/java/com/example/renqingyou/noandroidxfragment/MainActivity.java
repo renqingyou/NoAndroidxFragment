@@ -24,12 +24,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //action.setTitle("My Activity");
-        findViewById(R.id.bt).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                popDialog();
-            }
-        });
+        method();
 
         findViewById(R.id.tabLayout).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,6 +61,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void method(){
+        findViewById(R.id.bt).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                popDialog();
+            }
+        });
+    }
+
     /**
      * 提示对话框
      */
@@ -73,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
     public void popDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("问题：");
-        builder.setMessage("请问你满十八岁了吗?");
+        builder.setMessage("请问你满十八岁了吗1111?");
         builder.setIcon(R.mipmap.ic_launcher_round);
         //点击对话框以外的区域是否让对话框消失
         builder.setCancelable(true);
@@ -81,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
         builder.setPositiveButton("是的", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(MainActivity.this, "你点击了是的", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "你点击了是的aaa", Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
             }
         });
