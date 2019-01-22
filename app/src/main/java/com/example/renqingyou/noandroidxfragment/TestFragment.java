@@ -12,8 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.sensorsdata.analytics.android.sdk.SensorsDataAPI;
-import com.sensorsdata.analytics.android.sdk.SensorsDataFragmentTitle;
-import com.sensorsdata.analytics.android.sdk.SensorsDataTrackFragmentAppViewScreen;
+
 
 @SuppressWarnings("Convert2Lambda")
 public class TestFragment extends Fragment {
