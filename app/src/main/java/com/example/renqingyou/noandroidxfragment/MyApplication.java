@@ -44,9 +44,7 @@ public class MyApplication extends Application {
      * 初始化 Sensors Analytics SDK
      */
     private void initSensorsDataAPI() {
-        SensorsDataAPI.sharedInstance(
-                this,                               // 传入 Context
-                SA_SERVER_URL,SA_DEBUG_MODE);                     // Debug 模式选项
+        SensorsDataAPI.sharedInstance(this, SA_SERVER_URL);                     // Debug 模式选项
         // 打开自动采集, 并指定追踪哪些 AutoTrack 事件
         List<SensorsDataAPI.AutoTrackEventType> eventTypeList = new ArrayList<SensorsDataAPI.AutoTrackEventType>();
         // $AppStart
