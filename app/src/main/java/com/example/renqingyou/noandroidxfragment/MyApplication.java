@@ -18,7 +18,7 @@ public class MyApplication extends Application {
     /**
      * Sensors Analytics 采集数据的地址
      */
-    private final static String SA_SERVER_URL = "http://test-zouyuhan.cloud.sensorsdata.cn:8006/sa?project=wangzhuozhou&token=db52d13749514676";
+    private final static String SA_SERVER_URL = "http://sdkdebugtest.datasink.sensorsdata.cn/sa?project=default&token=cfb8b60e42e0ae9b";
 
     /**
      * Sensors Analytics 配置分发的地址
@@ -46,10 +46,9 @@ public class MyApplication extends Application {
     private void initSensorsDataAPI() {
         SensorsDataAPI.sharedInstance(
                 this,                               // 传入 Context
-                SA_SERVER_URL,                      // 数据接收的 URL
-                SA_DEBUG_MODE);                     // Debug 模式选项
+                SA_SERVER_URL,SA_DEBUG_MODE);                     // Debug 模式选项
         // 打开自动采集, 并指定追踪哪些 AutoTrack 事件
-        List<SensorsDataAPI.AutoTrackEventType> eventTypeList = new ArrayList<>();
+        List<SensorsDataAPI.AutoTrackEventType> eventTypeList = new ArrayList<SensorsDataAPI.AutoTrackEventType>();
         // $AppStart
         eventTypeList.add(SensorsDataAPI.AutoTrackEventType.APP_START);
         // $AppEnd
