@@ -50,13 +50,13 @@ android {
 
 repositories {
     flatDir {
-        dirs '/Users/jackyren/Documents/work/code/sa-sdk-android/SensorsAnalyticsSDK/build/outputs/aar'
+        dirs 'libs'
     }
 }
 
 
 dependencies {
-    releaseImplementation(name:'SensorsAnalyticsSDK-release', ext:'aar')
+    implementation(name:'SensorsAnalyticsSDK-release', ext:'aar')
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'

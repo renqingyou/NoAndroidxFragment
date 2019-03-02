@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.viewpager.widget.ViewPager;
 
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.Toast;
@@ -128,5 +129,9 @@ public class MainActivity extends AppCompatActivity {
 
         builder.show();
 
+    }
+
+    public boolean onNavigationItemSelected(MenuItem item) {
+        return false;
     }
 }
