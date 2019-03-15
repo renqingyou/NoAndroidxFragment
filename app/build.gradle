@@ -34,31 +34,31 @@ android {
 
 repositories {
     flatDir {
-        dirs '/Users/jackyren/Documents/work/code/sa-sdk-android/SensorsAnalyticsSDK/build/outputs/aar'
+        dirs 'libs'
     }
 }
 
 sensorsAnalytics {
-      disableJar=false
-      debug=true
+      //disableJar=false
+      debug = true
 //    debug = false
 //    useInclude = false
 //    exclude = []
 //    include = []
-    sdk {
+    /*sdk {
         disableIMEI = false
         disableAndroidID = false
         disableJsInterface = false
         disableMacAddress = false
         disableLog = false
-    }
+    }*/
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:28.0.0'
-    //implementation(name: 'SensorsAnalyticsSDK-release', ext: 'aar')
-    implementation 'com.sensorsdata.analytics.android:SensorsAnalyticsSDK:3.0.3'
+    implementation(name: 'SensorsAnalyticsSDK-release', ext: 'aar')
+    //implementation 'com.sensorsdata.analytics.android:SensorsAnalyticsSDK:3.0.3'
     //debugImplementation(name:'SensorsAnalyticsSDK-debug', ext:'aar')
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     implementation 'com.android.support:design:28.0.0'
