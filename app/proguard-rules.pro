@@ -20,4 +20,7 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 #保留crash日志的行号
+-dontwarn com.unionpay.**
 -keepattributes SourceFile,LineNumberTable
+-keep class com.unionpay.** {*;}
+-keep class com.UCMobile.** {*;}
