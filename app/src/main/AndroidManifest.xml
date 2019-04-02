@@ -39,6 +39,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MyTabLayout"/>
+        <activity android:name=".MyFragmentActivity"/>
         <activity android:name=".MyTabHostActivity"/>
         <activity android:name=".NavigationViewActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"
