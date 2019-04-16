@@ -23,19 +23,19 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <data
                     android:host="debugmode"
-                    android:scheme="saef9a7d56" />
+                    android:scheme="safc9a6400" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.BROWSABLE"/>
                 <category android:name="android.intent.category.DEFAULT"/>
-                <data android:host="appcircle" android:scheme="saef9a7d56"/>
+                <data android:host="visualized" android:scheme="safc9a6400"/>
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.BROWSABLE"/>
                 <category android:name="android.intent.category.DEFAULT"/>
-                <data android:host="heatmap" android:scheme="saef9a7d56"/>
+                <data android:host="heatmap" android:scheme="safc9a6400"/>
             </intent-filter>
         </activity>
         <activity android:name=".MyTabLayout"/>

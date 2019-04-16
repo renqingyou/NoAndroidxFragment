@@ -11,10 +11,14 @@ import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.Toast;
 
+import com.sensorsdata.analytics.android.sdk.ScreenAutoTracker;
 import com.sensorsdata.analytics.android.sdk.SensorsDataTrackEvent;
 
+import org.json.JSONException;
+import org.json.JSONObject;
 
-public class MainActivity extends AppCompatActivity {
+
+public class MainActivity extends AppCompatActivity implements ScreenAutoTracker {
 
     /**
      * 提示对话框
@@ -58,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("My Activity");
+        actionBar.setTitle("ActionBar Title");
         findViewById(R.id.bt0).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -159,4 +163,16 @@ public class MainActivity extends AppCompatActivity {
         builder.show();
     }
 
+    @Override
+    public String getScreenUrl() {
+        return null;
+    }
+
+    @Override
+    public JSONObject getTrackProperties() throws JSONException {
+        JSONObject message = new JSONObject();
+        message.put("$title","TrackPropertiesTitle");
+        message.put("$screen_url","TrackScreenURL");
+        return message;
+    }
 }

@@ -18,7 +18,7 @@ public class MyApplication extends Application {
     /**
      * Sensors Analytics 采集数据的地址
      */
-    private final static String SA_SERVER_URL = "http://114alpha.datasink.sensorsdata.cn/sa?project=default&token=04cf13b7442dcd3d";
+    private final static String SA_SERVER_URL = "http://10.19.101.175:8106/sa?project=default";
 
     /**
      * Sensors Analytics 配置分发的地址
@@ -60,6 +60,6 @@ public class MyApplication extends Application {
         SensorsDataAPI.sharedInstance(this).trackFragmentAppViewScreen();
         SensorsDataAPI.sharedInstance().enableLog(true);
         SensorsDataAPI.sharedInstance().enableHeatMap();
-        //SensorsDataAPI.sharedInstance().enableCustomerTrack();
+        SensorsDataAPI.sharedInstance().enableVisualizedAutoTrack();
     }
 }

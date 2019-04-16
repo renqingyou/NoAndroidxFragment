@@ -3,13 +3,13 @@ package com.example.renqingyou.noandroidxfragment;
 import android.support.v4.app.Fragment;
 
 public class BaseFragment extends Fragment {
-    @Override
+   /* @Override
     public void onResume() {
         super.onResume();
         //SensorsDataAPI.sharedInstance().trackViewScreen(this);
-    }
+    }*/
 
-    @Override
+  /*  @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
     }
@@ -22,5 +22,5 @@ public class BaseFragment extends Fragment {
     @Override
     public boolean getUserVisibleHint() {
         return super.getUserVisibleHint();
-    }
+    }*/
 }
