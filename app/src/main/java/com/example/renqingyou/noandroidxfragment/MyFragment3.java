@@ -1,13 +1,13 @@
 package com.example.renqingyou.noandroidxfragment;
 
-import android.app.Fragment;
+import android.app.DialogFragment;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class MyFragment3 extends Fragment {
+public class MyFragment3 extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment3,container,false);
