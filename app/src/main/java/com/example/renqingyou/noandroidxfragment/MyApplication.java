@@ -5,8 +5,15 @@ package com.example.renqingyou.noandroidxfragment;
 
 import android.app.Application;
 
+import android.content.Context;
 import com.sensorsdata.analytics.android.sdk.SensorsDataAPI;
 
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManagerFactory;
+import java.io.InputStream;
+import java.security.KeyStore;
+import java.security.cert.Certificate;
+import java.security.cert.CertificateFactory;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +25,7 @@ public class MyApplication extends Application {
     /**
      * Sensors Analytics 采集数据的地址
      */
-    private final static String SA_SERVER_URL = "http://10.19.101.175:8106/sa?project=default";
+    private final static String SA_SERVER_URL = "https://test.kbyte.cn:4106/sa";
 
     /**
      * Sensors Analytics 配置分发的地址
@@ -44,7 +51,7 @@ public class MyApplication extends Application {
      * 初始化 Sensors Analytics SDK
      */
     private void initSensorsDataAPI() {
-        SensorsDataAPI.sharedInstance(this, SA_SERVER_URL);                     // Debug 模式选项
+        SensorsDataAPI.sharedInstance(this, SA_SERVER_URL, SensorsDataAPI.DebugMode.DEBUG_AND_TRACK);                     // Debug 模式选项
         // 打开自动采集, 并指定追踪哪些 AutoTrack 事件
         List<SensorsDataAPI.AutoTrackEventType> eventTypeList = new ArrayList<SensorsDataAPI.AutoTrackEventType>();
         // $AppStart
@@ -61,5 +68,54 @@ public class MyApplication extends Application {
         SensorsDataAPI.sharedInstance().enableLog(true);
         SensorsDataAPI.sharedInstance().enableHeatMap();
         SensorsDataAPI.sharedInstance().enableVisualizedAutoTrack();
+        trustAppointCertificate(this);
+        //bks(this);
+    }
+
+    public void trustAppointCertificate(Context inputContext) {
+        SSLContext context;
+        try {
+            CertificateFactory cf = CertificateFactory.getInstance("X.509");
+            InputStream in = inputContext.getResources().openRawResource(R.raw.cer);
+            Certificate ca = cf.generateCertificate(in);
+            try {
+                in.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            KeyStore keystore = KeyStore.getInstance(KeyStore.getDefaultType());
+            keystore.load(null, null);
+            keystore.setCertificateEntry("ca", ca);
+            String tmfAlgorithm = TrustManagerFactory.getDefaultAlgorithm();
+            TrustManagerFactory tmf = TrustManagerFactory.getInstance(tmfAlgorithm);
+            tmf.init(keystore);
+            // Create an SSLContext that uses our TrustManager
+            context = SSLContext.getInstance("TLS");
+            context.init(null, tmf.getTrustManagers(), null);
+            SensorsDataAPI.sharedInstance().setSSLSocketFactory(context.getSocketFactory());
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+
+    }
+
+    public void bks(Context context){
+        try {
+            KeyStore ks = KeyStore.getInstance("BKS");
+            InputStream stream = context.getResources().openRawResource(R.raw.bks);
+            ks.load(stream, null);
+            try {
+                stream.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            TrustManagerFactory trustManagerFactory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
+            trustManagerFactory.init(ks);
+            SSLContext sc = SSLContext.getInstance("TLS");
+            sc.init(null, trustManagerFactory.getTrustManagers(), null);
+            SensorsDataAPI.sharedInstance().setSSLSocketFactory(sc.getSocketFactory());
+        } catch (Exception e) {
+
+        }
     }
 }
