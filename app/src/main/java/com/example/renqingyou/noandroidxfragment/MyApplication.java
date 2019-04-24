@@ -8,7 +8,9 @@ import android.app.Application;
 import android.content.Context;
 import com.sensorsdata.analytics.android.sdk.SensorsDataAPI;
 
+import javax.net.SocketFactory;
 import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManagerFactory;
 import java.io.InputStream;
 import java.security.KeyStore;
@@ -25,7 +27,7 @@ public class MyApplication extends Application {
     /**
      * Sensors Analytics 采集数据的地址
      */
-    private final static String SA_SERVER_URL = "https://test.kbyte.cn:4106/sa";
+    private final static String SA_SERVER_URL = "https://test.kbyte.cn:4106/sa?project=default";
 
     /**
      * Sensors Analytics 配置分发的地址
@@ -68,11 +70,12 @@ public class MyApplication extends Application {
         SensorsDataAPI.sharedInstance().enableLog(true);
         SensorsDataAPI.sharedInstance().enableHeatMap();
         SensorsDataAPI.sharedInstance().enableVisualizedAutoTrack();
-        trustAppointCertificate(this);
-        //bks(this);
+        SSLSocketFactory socketFactory = ca(this);
+        //SocketFactory socketFactory = bks(this);
+        SensorsDataAPI.sharedInstance().setSSLSocketFactory(socketFactory);
     }
 
-    public void trustAppointCertificate(Context inputContext) {
+    public SSLSocketFactory ca(Context inputContext) {
         SSLContext context;
         try {
             CertificateFactory cf = CertificateFactory.getInstance("X.509");
@@ -92,14 +95,15 @@ public class MyApplication extends Application {
             // Create an SSLContext that uses our TrustManager
             context = SSLContext.getInstance("TLS");
             context.init(null, tmf.getTrustManagers(), null);
-            SensorsDataAPI.sharedInstance().setSSLSocketFactory(context.getSocketFactory());
+            return context.getSocketFactory();
         } catch (Exception e){
             e.printStackTrace();
         }
+        return null;
 
     }
 
-    public void bks(Context context){
+    public SSLSocketFactory bks(Context context){
         try {
             KeyStore ks = KeyStore.getInstance("BKS");
             InputStream stream = context.getResources().openRawResource(R.raw.bks);
@@ -113,9 +117,10 @@ public class MyApplication extends Application {
             trustManagerFactory.init(ks);
             SSLContext sc = SSLContext.getInstance("TLS");
             sc.init(null, trustManagerFactory.getTrustManagers(), null);
-            SensorsDataAPI.sharedInstance().setSSLSocketFactory(sc.getSocketFactory());
+            return sc.getSocketFactory();
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
+        return null;
     }
 }

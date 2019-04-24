@@ -171,8 +171,8 @@ public class MainActivity extends AppCompatActivity implements ScreenAutoTracker
     @Override
     public JSONObject getTrackProperties() throws JSONException {
         JSONObject message = new JSONObject();
-        message.put("$title","TrackPropertiesTitle");
-        message.put("$screen_url","TrackScreenURL");
+        //message.put("$title","TrackPropertiesTitle");
+        //message.put("$screen_url","TrackScreenURL");
         return message;
     }
 }
