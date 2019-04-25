@@ -8,7 +8,6 @@ import android.app.Application;
 import android.content.Context;
 import com.sensorsdata.analytics.android.sdk.SensorsDataAPI;
 
-import javax.net.SocketFactory;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManagerFactory;
@@ -70,6 +69,7 @@ public class MyApplication extends Application {
         SensorsDataAPI.sharedInstance().enableLog(true);
         SensorsDataAPI.sharedInstance().enableHeatMap();
         SensorsDataAPI.sharedInstance().enableVisualizedAutoTrack();
+        //构造 SSL 套接字工厂实例
         SSLSocketFactory socketFactory = ca(this);
         //SocketFactory socketFactory = bks(this);
         SensorsDataAPI.sharedInstance().setSSLSocketFactory(socketFactory);
