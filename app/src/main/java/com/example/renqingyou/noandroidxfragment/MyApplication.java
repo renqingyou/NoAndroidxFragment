@@ -26,7 +26,7 @@ public class MyApplication extends Application {
     /**
      * Sensors Analytics 采集数据的地址
      */
-    private final static String SA_SERVER_URL = "https://test.kbyte.cn:4106/sa?project=default";
+    private final static String SA_SERVER_URL = "https://test.kbyte.cn:4106/sa?project=default&token=05b2fa597a378750";
 
     /**
      * Sensors Analytics 配置分发的地址
@@ -79,7 +79,7 @@ public class MyApplication extends Application {
         SSLContext context;
         try {
             CertificateFactory cf = CertificateFactory.getInstance("X.509");
-            InputStream in = inputContext.getResources().openRawResource(R.raw.cer);
+            InputStream in = inputContext.getResources().openRawResource(R.raw.ca);
             Certificate ca = cf.generateCertificate(in);
             try {
                 in.close();
