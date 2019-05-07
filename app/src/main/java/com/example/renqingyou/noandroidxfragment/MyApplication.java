@@ -70,7 +70,7 @@ public class MyApplication extends Application {
         SensorsDataAPI.sharedInstance().enableHeatMap();
         SensorsDataAPI.sharedInstance().enableVisualizedAutoTrack();
         //构造 SSL 套接字工厂实例
-        SSLSocketFactory socketFactory = ca(this);
+        SSLSocketFactory socketFactory = bks(this);
         //SocketFactory socketFactory = bks(this);
         SensorsDataAPI.sharedInstance().setSSLSocketFactory(socketFactory);
     }
@@ -106,7 +106,7 @@ public class MyApplication extends Application {
     public SSLSocketFactory bks(Context context){
         try {
             KeyStore ks = KeyStore.getInstance("BKS");
-            InputStream stream = context.getResources().openRawResource(R.raw.bks);
+            InputStream stream = context.getResources().openRawResource(R.raw.a);
             ks.load(stream, null);
             try {
                 stream.close();
