@@ -26,7 +26,7 @@ public class MyApplication extends Application {
     /**
      * Sensors Analytics 采集数据的地址
      */
-    private final static String SA_SERVER_URL = "https://test.kbyte.cn:4106/sa?project=default&token=05b2fa597a378750";
+    private final static String SA_SERVER_URL = "http://sdkenvironment.datasink.sensorsdata.cn/sa?project=default&token=788c7c42235f7b1d";
 
     /**
      * Sensors Analytics 配置分发的地址
@@ -70,9 +70,9 @@ public class MyApplication extends Application {
         SensorsDataAPI.sharedInstance().enableHeatMap();
         SensorsDataAPI.sharedInstance().enableVisualizedAutoTrack();
         //构造 SSL 套接字工厂实例
-        SSLSocketFactory socketFactory = bks(this);
+        //SSLSocketFactory socketFactory = bks(this);
         //SocketFactory socketFactory = bks(this);
-        SensorsDataAPI.sharedInstance().setSSLSocketFactory(socketFactory);
+        //SensorsDataAPI.sharedInstance().setSSLSocketFactory(socketFactory);
     }
 
     public SSLSocketFactory ca(Context inputContext) {
