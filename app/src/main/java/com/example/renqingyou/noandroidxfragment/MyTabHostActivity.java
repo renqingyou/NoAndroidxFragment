@@ -40,6 +40,12 @@ public class MyTabHostActivity extends TabActivity {
 
         //标签切换事件处理，setOnTabChangedListener
         // tabId是newTabSpec参数设置的tab页名，并不是layout里面的标识符id
+        tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
+            @Override
+            public void onTabChanged(String tabId) {
+
+            }
+        });
         tabHost.setOnTabChangedListener(tabId -> {
             if (tabId.equals("tab1")) {   //第一个标签
                 Toast.makeText(MyTabHostActivity.this, "点击标签页一", Toast.LENGTH_SHORT).show();
@@ -50,6 +56,9 @@ public class MyTabHostActivity extends TabActivity {
             if (tabId.equals("tab3")) {   //第三个标签
                 Toast.makeText(MyTabHostActivity.this, "点击标签页三", Toast.LENGTH_SHORT).show();
             }
+        });
+        new MyListenner().test(a -> {
+
         });
 
     }
