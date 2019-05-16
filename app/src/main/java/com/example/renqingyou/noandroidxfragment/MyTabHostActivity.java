@@ -46,7 +46,7 @@ public class MyTabHostActivity extends TabActivity {
 
             }
         });
-        tabHost.setOnTabChangedListener(tabId -> {
+        /*tabHost.setOnTabChangedListener(tabId -> {
             if (tabId.equals("tab1")) {   //第一个标签
                 Toast.makeText(MyTabHostActivity.this, "点击标签页一", Toast.LENGTH_SHORT).show();
             }
@@ -59,7 +59,7 @@ public class MyTabHostActivity extends TabActivity {
         });
         new MyListenner().test(a -> {
 
-        });
+        });*/
 
     }
 }

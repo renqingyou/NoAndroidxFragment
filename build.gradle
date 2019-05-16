@@ -3,6 +3,7 @@
 buildscript {
     
     repositories {
+        mavenLocal()
         google()
         jcenter()
         maven {
@@ -12,14 +13,21 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.1'
         classpath 'me.tatarka:gradle-retrolambda:3.2.0'
+        classpath ('com.tencent.tinker:tinker-patch-gradle-plugin:1.9.1')
         classpath 'com.sensorsdata.analytics.android:android-gradle-plugin2:3.0.4'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+    }
+
+    configurations.all {
+        it.resolutionStrategy.cacheDynamicVersionsFor(5, 'minutes')
+        it.resolutionStrategy.cacheChangingModulesFor(0, 'seconds')
     }
 }
 
 allprojects {
     repositories {
+        mavenLocal()
         google()
         jcenter()
     }

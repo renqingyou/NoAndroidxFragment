@@ -6,6 +6,7 @@ package com.example.renqingyou.noandroidxfragment;
 import android.app.Application;
 
 import android.content.Context;
+import android.support.multidex.MultiDex;
 import com.sensorsdata.analytics.android.sdk.SensorsDataAPI;
 
 import javax.net.ssl.SSLContext;
@@ -41,6 +42,12 @@ public class MyApplication extends Application {
      * 注意！请不要在正式发布的 App 中使用 Debug 模式！
      */
     private final SensorsDataAPI.DebugMode SA_DEBUG_MODE = SensorsDataAPI.DebugMode.DEBUG_AND_TRACK;
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
+    }
 
     @Override
     public void onCreate() {

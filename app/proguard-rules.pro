@@ -20,9 +20,16 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 #保留crash日志的行号
+-optimizations !field/removal/writeonly,!field/marking/private,!class/merging/*,!code/allocation/variable
+-keepattributes LocalVariableTable,LocalVariableTypeTable
+-keep,allowshrinking,allowoptimization class * { <methods>; }
 -keepattributes SourceFile,LineNumberTable
--keep class com.UCMobile.** {*;}
+
+-dontwarn com.google.**
+-dontwarn com.android.**
+
 -dontwarn com.unionpay.**
 -keep class org.simalliance.openmobileapi.** {*;}
 -keep class org.simalliance.openmobileapi.service.** {*;}
 -keep class com.unionpay.** {*;}
+-keep class com.UCMobile.** {*;}
