@@ -1,0 +1,98 @@
+// class version 49.0 (49)
+// access flags 0x30
+final class com/unionpay/mobile/android/widgets/al implements android/widget/AdapterView$OnItemClickListener  {
+
+  // access flags 0x0
+  INNERCLASS com/unionpay/mobile/android/widgets/al null null
+  // access flags 0x609
+  public static abstract INNERCLASS android/widget/AdapterView$OnItemClickListener android/widget/AdapterView OnItemClickListener
+
+  // access flags 0x1010
+  final synthetic Lcom/unionpay/mobile/android/widgets/ai; a
+
+  // access flags 0x0
+  <init>(Lcom/unionpay/mobile/android/widgets/ai;)V
+    ALOAD 0
+    ALOAD 1
+    PUTFIELD com/unionpay/mobile/android/widgets/al.a : Lcom/unionpay/mobile/android/widgets/ai;
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+    RETURN
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x11
+  // signature (Landroid/widget/AdapterView<*>;Landroid/view/View;IJ)V
+  // declaration: void onItemClick(android.widget.AdapterView<?>, android.view.View, int, long)
+  public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
+    ALOAD 2
+    INVOKEVIRTUAL android/view/View.getTag ()Ljava/lang/Object;
+    CHECKCAST java/lang/Integer
+    INVOKEVIRTUAL java/lang/Integer.intValue ()I
+    ISTORE 1
+    ALOAD 0
+    GETFIELD com/unionpay/mobile/android/widgets/al.a : Lcom/unionpay/mobile/android/widgets/ai;
+    ALOAD 0
+    GETFIELD com/unionpay/mobile/android/widgets/al.a : Lcom/unionpay/mobile/android/widgets/ai;
+    GETFIELD com/unionpay/mobile/android/widgets/ai.c : Landroid/content/Context;
+    NEW java/lang/StringBuilder
+    DUP
+    INVOKESPECIAL java/lang/StringBuilder.<init> ()V
+    ALOAD 0
+    GETFIELD com/unionpay/mobile/android/widgets/al.a : Lcom/unionpay/mobile/android/widgets/ai;
+    INVOKEVIRTUAL com/unionpay/mobile/android/widgets/ai.v ()Ljava/lang/String;
+    INVOKEVIRTUAL java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;
+    ALOAD 0
+    GETFIELD com/unionpay/mobile/android/widgets/al.a : Lcom/unionpay/mobile/android/widgets/ai;
+    INVOKEVIRTUAL com/unionpay/mobile/android/widgets/ai.d ()Ljava/lang/String;
+    INVOKEVIRTUAL java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;
+    INVOKEVIRTUAL java/lang/StringBuilder.toString ()Ljava/lang/String;
+    GETSTATIC com/unionpay/mobile/android/utils/o.h : [Ljava/lang/String;
+    ICONST_3
+    ANEWARRAY java/lang/Object
+    DUP
+    ICONST_0
+    ALOAD 0
+    GETFIELD com/unionpay/mobile/android/widgets/al.a : Lcom/unionpay/mobile/android/widgets/ai;
+    ILOAD 1
+    LDC "type"
+    INVOKESTATIC com/unionpay/mobile/android/widgets/ai.a (Lcom/unionpay/mobile/android/widgets/ai;ILjava/lang/String;)Ljava/lang/String;
+    AASTORE
+    DUP
+    ICONST_1
+    ILOAD 3
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    AASTORE
+    DUP
+    ICONST_2
+    ALOAD 0
+    GETFIELD com/unionpay/mobile/android/widgets/al.a : Lcom/unionpay/mobile/android/widgets/ai;
+    ILOAD 1
+    ILOAD 3
+    LDC "label"
+    INVOKESTATIC com/unionpay/mobile/android/widgets/ai.a (Lcom/unionpay/mobile/android/widgets/ai;IILjava/lang/String;)Ljava/lang/String;
+    AASTORE
+    INVOKEVIRTUAL com/unionpay/mobile/android/widgets/ai.a (Landroid/content/Context;Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/Object;)V
+    ALOAD 0
+    GETFIELD com/unionpay/mobile/android/widgets/al.a : Lcom/unionpay/mobile/android/widgets/ai;
+    ILOAD 1
+    ILOAD 3
+    INVOKESTATIC com/unionpay/mobile/android/widgets/ai.a (Lcom/unionpay/mobile/android/widgets/ai;II)V
+    ALOAD 0
+    GETFIELD com/unionpay/mobile/android/widgets/al.a : Lcom/unionpay/mobile/android/widgets/ai;
+    INVOKESTATIC com/unionpay/mobile/android/widgets/ai.a (Lcom/unionpay/mobile/android/widgets/ai;)Landroid/widget/PopupWindow;
+    IFNULL L0
+    ALOAD 0
+    GETFIELD com/unionpay/mobile/android/widgets/al.a : Lcom/unionpay/mobile/android/widgets/ai;
+    INVOKESTATIC com/unionpay/mobile/android/widgets/ai.a (Lcom/unionpay/mobile/android/widgets/ai;)Landroid/widget/PopupWindow;
+    INVOKEVIRTUAL android/widget/PopupWindow.dismiss ()V
+   L0
+    ALOAD 1
+    ALOAD 2
+    ILOAD 3
+    INVOKESTATIC com/sensorsdata/analytics/android/sdk/SensorsDataAutoTrackHelper.trackListView (Landroid/widget/AdapterView;Landroid/view/View;I)V
+    RETURN
+    MAXSTACK = 11
+    MAXLOCALS = 6
+  @Lcom/sensorsdata/analytics/android/sdk/SensorsDataInstrumented;() // invisible
+}

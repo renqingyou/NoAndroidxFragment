@@ -6,6 +6,9 @@ import android.view.LayoutInflater;
 import android.widget.TabHost;
 import android.widget.Toast;
 
+import com.sensorsdata.analytics.android.sdk.SensorsDataAPI;
+import com.sensorsdata.analytics.android.sdk.SensorsDataAutoTrackHelper;
+
 public class MyTabHostActivity extends TabActivity {
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -43,7 +46,7 @@ public class MyTabHostActivity extends TabActivity {
         tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
             @Override
             public void onTabChanged(String tabId) {
-
+                SensorsDataAutoTrackHelper.trackTabHost(tabId);
             }
         });
         /*tabHost.setOnTabChangedListener(tabId -> {

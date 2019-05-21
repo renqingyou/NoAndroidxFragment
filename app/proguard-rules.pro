@@ -20,10 +20,8 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 #保留crash日志的行号
--optimizations !field/removal/writeonly,!field/marking/private,!class/merging/*,!code/allocation/variable
--keepattributes LocalVariableTable,LocalVariableTypeTable
--keep,allowshrinking,allowoptimization class * { <methods>; }
--keepattributes SourceFile,LineNumberTable
+-dontoptimize
+-optimizations !code/allocation/variable
 
 -dontwarn com.google.**
 -dontwarn com.android.**

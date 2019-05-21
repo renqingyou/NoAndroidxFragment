@@ -1,0 +1,14 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'org.ow2.asm:asm:6.0'
+    compile 'org.ow2.asm:asm-commons:6.0'
+    compile 'org.ow2.asm:asm-analysis:6.0'
+    compile 'org.ow2.asm:asm-util:6.0'
+    compile 'org.ow2.asm:asm-tree:6.0'
+    implementation files('libs/0.jar')
+}
+
+sourceCompatibility = "7"
+targetCompatibility = "7"
