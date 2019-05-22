@@ -72,9 +72,9 @@ sensorsAnalytics {
       //disableJar=false
       debug = true
 //    debug = false
-      useInclude = true
+      //useInclude = true
 //    exclude = []
-      include = ['com.unionpay']
+      //include = ['com.unionpay']
     /*sdk {
         disableIMEI = false
         disableAndroidID = false
@@ -85,21 +85,21 @@ sensorsAnalytics {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:28.0.0'
-    compile(name: 'SensorsAnalyticsSDK-release', ext: 'aar')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation(name: 'SensorsAnalyticsSDK-release', ext: 'aar')
     //implementation 'com.sensorsdata.analytics.android:SensorsAnalyticsSDK:3.1.0'
     //debugImplementation(name:'SensorsAnalyticsSDK-debug', ext:'aar')
-    compile 'com.android.support.constraint:constraint-layout:1.1.3'
-    compile 'com.android.support:design:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:design:28.0.0'
     //testImplementation 'junit:junit:4.12'
     //androidTestImplementation 'com.android.support.test:runner:1.0.2'
     //androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     //implementation files('libs/UPPayPluginExPro_e9d18187.jar')
     //implementation 'com.pingxx:pingpp-upacp:2.1.9'
     //implementation 'com.belerweb:pinyin4j:2.5.1'
-    compile files('libs/UPPayAssistEx.jar')
-    compile files('libs/UPPayPluginExPro.jar')
+    implementation files('libs/UPPayAssistEx.jar')
+    implementation files('libs/UPPayPluginExPro.jar')
     //implementation files('libs/LinkedME-Android-Deep-Linking-SDK-V1.0.30.jar')
     //implementation 'com.pingxx:pingpp-alipay:2.1.9'
     //implementation 'com.pingxx:pingpp-wxpay:2.1.9'

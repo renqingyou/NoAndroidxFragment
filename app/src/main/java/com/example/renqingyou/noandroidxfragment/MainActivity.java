@@ -8,6 +8,8 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SwitchCompat;
 import android.view.View;
+import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.CompoundButton;
 import android.widget.Toast;
 
@@ -126,6 +128,37 @@ public class MainActivity extends AppCompatActivity implements ScreenAutoTracker
                 startActivity(intent);
             }
         });
+
+        AdapterView adapterView = new AdapterView(this) {
+            @Override
+            public Adapter getAdapter() {
+                return null;
+            }
+
+            @Override
+            public void setAdapter(Adapter adapter) {
+
+            }
+
+            @Override
+            public View getSelectedView() {
+                return null;
+            }
+
+            @Override
+            public void setSelection(int position) {
+
+            }
+        };
+        adapterView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+        });
+        /*adapterView.setOnItemClickListener((parent, view, position, id) -> {
+
+        });*/
 
     }
 
