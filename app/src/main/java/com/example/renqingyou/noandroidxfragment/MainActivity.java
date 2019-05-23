@@ -156,9 +156,13 @@ public class MainActivity extends AppCompatActivity implements ScreenAutoTracker
 
             }
         });
-        /*adapterView.setOnItemClickListener((parent, view, position, id) -> {
+        adapterView.setOnItemClickListener((parent, view, position, id) -> {
 
-        });*/
+        });
+
+        new MyListenner().test(a -> {
+
+        });
 
     }
 

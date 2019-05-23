@@ -57,8 +57,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_7
-        targetCompatibility JavaVersion.VERSION_1_7
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
@@ -98,8 +98,6 @@ dependencies {
     //implementation files('libs/UPPayPluginExPro_e9d18187.jar')
     //implementation 'com.pingxx:pingpp-upacp:2.1.9'
     //implementation 'com.belerweb:pinyin4j:2.5.1'
-    implementation files('libs/UPPayAssistEx.jar')
-    implementation files('libs/UPPayPluginExPro.jar')
     //implementation files('libs/LinkedME-Android-Deep-Linking-SDK-V1.0.30.jar')
     //implementation 'com.pingxx:pingpp-alipay:2.1.9'
     //implementation 'com.pingxx:pingpp-wxpay:2.1.9'
