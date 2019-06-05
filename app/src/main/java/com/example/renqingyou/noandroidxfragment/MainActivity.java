@@ -8,9 +8,6 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SwitchCompat;
 import android.view.View;
-import android.widget.Adapter;
-import android.widget.AdapterView;
-import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import com.sensorsdata.analytics.android.sdk.ScreenAutoTracker;
@@ -65,12 +62,9 @@ public class MainActivity extends AppCompatActivity implements ScreenAutoTracker
         setContentView(R.layout.activity_main);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("ActionBar Title");
-        findViewById(R.id.bt0).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MyFragmentActivity.class);
-                startActivity(intent);
-            }
+        findViewById(R.id.bt0).setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, MyFragmentActivity.class);
+            startActivity(intent);
         });
         findViewById(R.id.bt1).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,11 +107,8 @@ public class MainActivity extends AppCompatActivity implements ScreenAutoTracker
         //navigationView.setNavigationItemSelectedListener(menuItem -> false);
 
         SwitchCompat switchCompat = findViewById(R.id.switch_compat);
-        switchCompat.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+        switchCompat.setOnCheckedChangeListener((compoundButton, b) -> {
 
-            }
         });
 
 
@@ -127,41 +118,6 @@ public class MainActivity extends AppCompatActivity implements ScreenAutoTracker
                 Intent intent = new Intent(MainActivity.this, ViewPagerActivity.class);
                 startActivity(intent);
             }
-        });
-
-        AdapterView adapterView = new AdapterView(this) {
-            @Override
-            public Adapter getAdapter() {
-                return null;
-            }
-
-            @Override
-            public void setAdapter(Adapter adapter) {
-
-            }
-
-            @Override
-            public View getSelectedView() {
-                return null;
-            }
-
-            @Override
-            public void setSelection(int position) {
-
-            }
-        };
-        adapterView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-            }
-        });
-        adapterView.setOnItemClickListener((parent, view, position, id) -> {
-
-        });
-
-        new MyListenner().test(a -> {
-
         });
 
     }
@@ -174,12 +130,9 @@ public class MainActivity extends AppCompatActivity implements ScreenAutoTracker
         //点击对话框以外的区域是否让对话框消失
         builder.setCancelable(true);
         //设置正面按钮
-        builder.setPositiveButton("是的", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(MainActivity.this, "你点击了是的", Toast.LENGTH_SHORT).show();
-                dialog.dismiss();
-            }
+        builder.setPositiveButton("是的", (dialog, which) -> {
+            Toast.makeText(MainActivity.this, "你点击了是的", Toast.LENGTH_SHORT).show();
+            dialog.dismiss();
         });
         //设置反面按钮
         builder.setNegativeButton("不是", new DialogInterface.OnClickListener() {
