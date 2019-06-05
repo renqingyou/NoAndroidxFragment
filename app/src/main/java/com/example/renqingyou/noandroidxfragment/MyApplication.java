@@ -26,7 +26,7 @@ public class MyApplication extends Application {
     /**
      * Sensors Analytics 采集数据的地址
      */
-    private final static String SA_SERVER_URL = "https://test.kbyte.cn:4106/sa?project=default&token=05b2fa597a378750";
+    private final static String SA_SERVER_URL = "http://10.42.162.147:8106/sa?project=default";
 
     /**
      * Sensors Analytics 配置分发的地址
@@ -40,7 +40,7 @@ public class MyApplication extends Application {
      * SensorsDataAPI.DebugMode.DEBUG_AND_TRACK - 打开 Debug 模式，校验数据，并将数据导入到 Sensors Analytics 中
      * 注意！请不要在正式发布的 App 中使用 Debug 模式！
      */
-    private final SensorsDataAPI.DebugMode SA_DEBUG_MODE = SensorsDataAPI.DebugMode.DEBUG_AND_TRACK;
+    private final SensorsDataAPI.DebugMode SA_DEBUG_MODE = SensorsDataAPI.DebugMode.DEBUG_OFF;
 
     @Override
     public void onCreate() {
@@ -52,7 +52,7 @@ public class MyApplication extends Application {
      * 初始化 Sensors Analytics SDK
      */
     private void initSensorsDataAPI() {
-        SensorsDataAPI.sharedInstance(this, SA_SERVER_URL, SensorsDataAPI.DebugMode.DEBUG_AND_TRACK);                     // Debug 模式选项
+        SensorsDataAPI.sharedInstance(this, SA_SERVER_URL, SA_DEBUG_MODE);                     // Debug 模式选项
         // 打开自动采集, 并指定追踪哪些 AutoTrack 事件
         List<SensorsDataAPI.AutoTrackEventType> eventTypeList = new ArrayList<SensorsDataAPI.AutoTrackEventType>();
         // $AppStart
@@ -69,10 +69,6 @@ public class MyApplication extends Application {
         SensorsDataAPI.sharedInstance().enableLog(true);
         SensorsDataAPI.sharedInstance().enableHeatMap();
         SensorsDataAPI.sharedInstance().enableVisualizedAutoTrack();
-        //构造 SSL 套接字工厂实例
-        SSLSocketFactory socketFactory = bks(this);
-        //SocketFactory socketFactory = bks(this);
-        SensorsDataAPI.sharedInstance().setSSLSocketFactory(socketFactory);
     }
 
     public SSLSocketFactory ca(Context inputContext) {
