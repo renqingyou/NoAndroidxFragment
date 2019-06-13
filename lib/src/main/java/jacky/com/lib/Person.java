@@ -1,15 +1,11 @@
-package com.example.renqingyou.noandroidxfragment;
+package jacky.com.lib;
 
-
-import android.os.Build;
-import android.support.annotation.RequiresApi;
-import android.view.View;
 
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class Test {
+public class Person {
     public enum Sex{
         MALE,FEMALE
     }
@@ -35,20 +31,17 @@ public class Test {
         return name;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    public static int compareByAge(Test a, Test b){
+    public static int compareByAge(Person a, Person b){
         return a.birthday.compareTo(b.birthday);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     public static void main(String... args){
-        Test[] persons = new Test[10];
+        Person [] persons = new Person[10];
 
 //使用匿名类
-        Arrays.sort(persons, new Comparator<Test>() {
-            @RequiresApi(api = Build.VERSION_CODES.O)
+        Arrays.sort(persons, new Comparator<Person>() {
             @Override
-            public int compare(Test o1, Test o2) {
+            public int compare(Person o1, Person o2) {
                 return o1.birthday.compareTo(o2.birthday);
             }
         });
@@ -57,11 +50,13 @@ public class Test {
         Arrays.sort(persons, (o1, o2) -> o1.birthday.compareTo(o2.birthday));
 
 //使用lambda表达式和类的静态方法
-        Arrays.sort(persons, (o1, o2) -> Test.compareByAge(o1,o2));
+        Arrays.sort(persons, (o1, o2) -> Person.compareByAge(o1,o2));
 
 //使用方法引用
 //引用的是类的静态方法
-        Arrays.sort(persons, Test::compareByAge);
+        Arrays.sort(persons, Person::compareByAge);
+
+
 
 
         ComparisonProvider provider = new ComparisonProvider();
@@ -77,18 +72,13 @@ public class Test {
 
 
     static class ComparisonProvider{
-        public int compareByName(Test a, Test b){
+        public int compareByName(Person a,Person b){
             return a.getName().compareTo(b.getName());
         }
 
-        @RequiresApi(api = Build.VERSION_CODES.O)
-        public int compareByAge(Test a, Test b){
+        public int compareByAge(Person a,Person b){
             return a.getBirthday().compareTo(b.getBirthday());
         }
-    }
-
-    public void a(View v) {
-
     }
 
 

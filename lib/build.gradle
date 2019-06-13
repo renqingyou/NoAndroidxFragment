@@ -10,5 +10,5 @@ dependencies {
     implementation files('libs/0.jar')
 }
 
-sourceCompatibility = "7"
-targetCompatibility = "7"
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
