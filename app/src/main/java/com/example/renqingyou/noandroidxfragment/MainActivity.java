@@ -65,13 +65,14 @@ public class MainActivity extends AppCompatActivity implements ScreenAutoTracker
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         Dialog dialog = builder.create();
         View view1 = new View(this);
-        findViewById(R.id.bt3).setOnClickListener(v -> {
+        /*findViewById(R.id.bt3).setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, MyTabHostActivity.class);
             startActivity(intent);
             printV(v);
             printV(view1);
             dialog.dismiss();
-        });
+        });*/
+        findViewById(R.id.bt3).setOnClickListener(new Test()::a);
         ListView listView = new ListView(this);
         listView.setOnItemClickListener((parent, view, position, id) -> {
             printV(view1);
@@ -81,8 +82,6 @@ public class MainActivity extends AppCompatActivity implements ScreenAutoTracker
             Intent intent = new Intent(MainActivity.this, NavigationViewActivity.class);
             startActivity(intent);
         });
-
-        findViewById(R.id.navigationView).setOnClickListener(new Test()::a);
 
        findViewById(R.id.bt0).setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, MyFragmentActivity.class);
