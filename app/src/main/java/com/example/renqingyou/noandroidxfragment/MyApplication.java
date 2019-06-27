@@ -26,7 +26,7 @@ public class MyApplication extends Application {
     /**
      * Sensors Analytics 采集数据的地址
      */
-    private final static String SA_SERVER_URL = "http://10.42.162.147:8106/sa?project=default";
+    private final static String SA_SERVER_URL = "http://securityuts.datasink.sensorsdata.cn/sa?project=default&token=5ea430c39f9dd316";
 
     /**
      * Sensors Analytics 配置分发的地址

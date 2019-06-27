@@ -12,7 +12,7 @@ android {
     }
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.zhao.haiyin"
+        applicationId "com.yuming"
         minSdkVersion 15
         targetSdkVersion 26
         versionCode 1
