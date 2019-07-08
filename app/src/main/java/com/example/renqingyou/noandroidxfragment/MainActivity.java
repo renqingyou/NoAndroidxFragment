@@ -4,24 +4,25 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.NavigationView;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SwitchCompat;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.sensorsdata.analytics.android.sdk.ScreenAutoTracker;
+
 import com.sensorsdata.analytics.android.sdk.SensorsDataTrackEvent;
 
-import org.json.JSONException;
-import org.json.JSONObject;
 
-
-public class MainActivity extends AppCompatActivity implements ScreenAutoTracker {
+public class MainActivity extends AppCompatActivity  {
 
     /**
      * 提示对话框
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements ScreenAutoTracker
         Log.e("rqy","View--"+v);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,14 +67,24 @@ public class MainActivity extends AppCompatActivity implements ScreenAutoTracker
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         Dialog dialog = builder.create();
         View view1 = new View(this);
-        /*findViewById(R.id.bt3).setOnClickListener(v -> {
+        findViewById(R.id.bt3).setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, MyTabHostActivity.class);
             startActivity(intent);
             printV(v);
             printV(view1);
             dialog.dismiss();
-        });*/
-        findViewById(R.id.bt3).setOnClickListener(new Test()::a);
+        });
+
+        Toolbar toolbar = new Toolbar(this);
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                return false;
+            }
+        });
+
+        toolbar.setOnMenuItemClickListener(menuItem -> false);
+
         ListView listView = new ListView(this);
         listView.setOnItemClickListener((parent, view, position, id) -> {
             printV(view1);
@@ -141,18 +153,6 @@ public class MainActivity extends AppCompatActivity implements ScreenAutoTracker
         builder.show();
     }
 
-    @Override
-    public String getScreenUrl() {
-        return null;
-    }
-
-    @Override
-    public JSONObject getTrackProperties() throws JSONException {
-        JSONObject message = new JSONObject();
-        //message.put("$title","TrackPropertiesTitle");
-        //message.put("$screen_url","TrackScreenURL");
-        return message;
-    }
 
     class MyListenner implements DialogInterface.OnClickListener {
 
