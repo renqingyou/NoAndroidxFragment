@@ -16,10 +16,16 @@ import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.Toast;
 
+import com.sensorsdata.analytics.android.sdk.SensorsDataFragmentTitle;
 import com.sensorsdata.analytics.android.sdk.SensorsDataTrackEvent;
 
-
+@SensorsDataFragmentTitle
 public class MainActivity extends AppCompatActivity {
+    public static final String a = "android.support.v4";
+
+    static {
+        String a = "android.support.v24";
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //action.setTitle("My Activity");
         method();
+        String b = "android.support.v7";
+        String[] c = new String[]{"android.support.v13",""};
 
         Toolbar toolbar = new Toolbar(this);
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {

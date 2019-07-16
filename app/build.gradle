@@ -24,7 +24,10 @@ android {
     sensorsAnalytics {
         debug = true
         sdk {
-            disableIMEI = true
+            //disableIMEI = true
+        }
+        check {
+            stringCheckSet = ['android.support.v24']
         }
     }
 
