@@ -75,11 +75,11 @@ public class MyApplication extends Application {
         SensorsDataAPI.sharedInstance(this).trackFragmentAppViewScreen();
         SensorsDataAPI.sharedInstance().enableLog(true);
         SensorsDataAPI.sharedInstance().enableHeatMap();
-        SensorsDataAPI.sharedInstance().enableVisualizedAutoTrack();
+        //SensorsDataAPI.sharedInstance().enableVisualizedAutoTrack();
         //构造 SSL 套接字工厂实例
-        SSLSocketFactory socketFactory = bks(this);
+        //SSLSocketFactory socketFactory = bks(this);
         //SocketFactory socketFactory = bks(this);
-        SensorsDataAPI.sharedInstance().setSSLSocketFactory(socketFactory);
+        //SensorsDataAPI.sharedInstance().setSSLSocketFactory(socketFactory);
     }
 
     public SSLSocketFactory ca(Context inputContext) {
