@@ -1,98 +1,982 @@
-// class version 49.0 (49)
-// access flags 0x30
-final class com/unionpay/mobile/android/widgets/al implements android/widget/AdapterView$OnItemClickListener  {
+// class version 52.0 (52)
+// access flags 0x21
+public class com/example/renqingyou/noandroidxfragment/MainActivity extends android/support/v7/app/AppCompatActivity  implements android/view/View$OnClickListener  {
 
+  // compiled from: MainActivity.java
   // access flags 0x0
-  INNERCLASS com/unionpay/mobile/android/widgets/al null null
+  INNERCLASS com/example/renqingyou/noandroidxfragment/MainActivity$MyListenner com/example/renqingyou/noandroidxfragment/MainActivity MyListenner
+  // access flags 0x0
+  INNERCLASS com/example/renqingyou/noandroidxfragment/MainActivity$1 null null
+  // access flags 0x9
+  public static INNERCLASS android/app/AlertDialog$Builder android/app/AlertDialog Builder
+  // access flags 0x19
+  public final static INNERCLASS com/example/renqingyou/noandroidxfragment/R$mipmap com/example/renqingyou/noandroidxfragment/R mipmap
+  // access flags 0x19
+  public final static INNERCLASS com/example/renqingyou/noandroidxfragment/R$layout com/example/renqingyou/noandroidxfragment/R layout
+  // access flags 0x19
+  public final static INNERCLASS com/example/renqingyou/noandroidxfragment/R$id com/example/renqingyou/noandroidxfragment/R id
+  // access flags 0x609
+  public static abstract INNERCLASS android/view/View$OnClickListener android/view/View OnClickListener
+  // access flags 0x609
+  public static abstract INNERCLASS android/content/DialogInterface$OnClickListener android/content/DialogInterface OnClickListener
   // access flags 0x609
   public static abstract INNERCLASS android/widget/AdapterView$OnItemClickListener android/widget/AdapterView OnItemClickListener
+  // access flags 0x609
+  public static abstract INNERCLASS android/support/design/widget/NavigationView$OnNavigationItemSelectedListener android/support/design/widget/NavigationView OnNavigationItemSelectedListener
+  // access flags 0x609
+  public static abstract INNERCLASS android/widget/CompoundButton$OnCheckedChangeListener android/widget/CompoundButton OnCheckedChangeListener
+  // access flags 0x609
+  public static abstract INNERCLASS android/support/v7/widget/Toolbar$OnMenuItemClickListener android/support/v7/widget/Toolbar OnMenuItemClickListener
+  // access flags 0x19
+  public final static INNERCLASS java/lang/invoke/MethodHandles$Lookup java/lang/invoke/MethodHandles Lookup
 
-  // access flags 0x1010
-  final synthetic Lcom/unionpay/mobile/android/widgets/ai; a
+  // access flags 0x1
+  public Ljava/lang/String; a
 
   // access flags 0x0
-  <init>(Lcom/unionpay/mobile/android/widgets/ai;)V
+  Landroid/widget/Toast; toast
+
+  // access flags 0x1
+  public <init>()V
+   L0
+    LINENUMBER 25 L0
     ALOAD 0
-    ALOAD 1
-    PUTFIELD com/unionpay/mobile/android/widgets/al.a : Lcom/unionpay/mobile/android/widgets/ai;
+    INVOKESPECIAL android/support/v7/app/AppCompatActivity.<init> ()V
+   L1
+    LINENUMBER 26 L1
     ALOAD 0
-    INVOKESPECIAL java/lang/Object.<init> ()V
+    LDC "globalString"
+    PUTFIELD com/example/renqingyou/noandroidxfragment/MainActivity.a : Ljava/lang/String;
     RETURN
+   L2
+    LOCALVARIABLE this Lcom/example/renqingyou/noandroidxfragment/MainActivity; L0 L2 0
     MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public popDialog1()V
+  @Lcom/sensorsdata/analytics/android/sdk/SensorsDataTrackEvent;(eventName="myevent", properties="{\"provider\":\"\u795e\u7b56\u6570\u636e\",\"number\":100,\"isLogin\":true}")
+   L0
+    LINENUMBER 34 L0
+    NEW android/app/AlertDialog$Builder
+    DUP
+    ALOAD 0
+    INVOKESPECIAL android/app/AlertDialog$Builder.<init> (Landroid/content/Context;)V
+    ASTORE 1
+   L1
+    LINENUMBER 35 L1
+    ALOAD 1
+    LDC "\u95ee\u9898\uff1a"
+    INVOKEVIRTUAL android/app/AlertDialog$Builder.setTitle (Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+    POP
+   L2
+    LINENUMBER 36 L2
+    ALOAD 1
+    LDC "\u8bf7\u95ee\u4f60\u6ee1\u5341\u516b\u5c81\u4e86\u5417?"
+    INVOKEVIRTUAL android/app/AlertDialog$Builder.setMessage (Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+    POP
+   L3
+    LINENUMBER 37 L3
+    ALOAD 1
+    LDC 2131558401
+    INVOKEVIRTUAL android/app/AlertDialog$Builder.setIcon (I)Landroid/app/AlertDialog$Builder;
+    POP
+   L4
+    LINENUMBER 39 L4
+    ALOAD 1
+    ICONST_1
+    INVOKEVIRTUAL android/app/AlertDialog$Builder.setCancelable (Z)Landroid/app/AlertDialog$Builder;
+    POP
+   L5
+    LINENUMBER 41 L5
+    ALOAD 1
+    LDC "\u662f\u7684"
+    ALOAD 0
+    INVOKEDYNAMIC onClick(Lcom/example/renqingyou/noandroidxfragment/MainActivity;)Landroid/content/DialogInterface$OnClickListener; [
+      // handle kind 0x6 : INVOKESTATIC
+      java/lang/invoke/LambdaMetafactory.metafactory(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+      // arguments:
+      (Landroid/content/DialogInterface;I)V, 
+      // handle kind 0x7 : INVOKESPECIAL
+      com/example/renqingyou/noandroidxfragment/MainActivity.lambda$popDialog1$0(Landroid/content/DialogInterface;I)V, 
+      (Landroid/content/DialogInterface;I)V
+    ]
+    INVOKEVIRTUAL android/app/AlertDialog$Builder.setPositiveButton (Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    POP
+   L6
+    LINENUMBER 46 L6
+    ALOAD 1
+    LDC "\u4e0d\u662f"
+    ALOAD 0
+    INVOKEDYNAMIC onClick(Lcom/example/renqingyou/noandroidxfragment/MainActivity;)Landroid/content/DialogInterface$OnClickListener; [
+      // handle kind 0x6 : INVOKESTATIC
+      java/lang/invoke/LambdaMetafactory.metafactory(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+      // arguments:
+      (Landroid/content/DialogInterface;I)V, 
+      // handle kind 0x7 : INVOKESPECIAL
+      com/example/renqingyou/noandroidxfragment/MainActivity.lambda$popDialog1$1(Landroid/content/DialogInterface;I)V, 
+      (Landroid/content/DialogInterface;I)V
+    ]
+    INVOKEVIRTUAL android/app/AlertDialog$Builder.setNegativeButton (Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    POP
+   L7
+    LINENUMBER 51 L7
+    ALOAD 1
+    LDC "\u4fdd\u5bc6"
+    ALOAD 0
+    INVOKEDYNAMIC onClick(Lcom/example/renqingyou/noandroidxfragment/MainActivity;)Landroid/content/DialogInterface$OnClickListener; [
+      // handle kind 0x6 : INVOKESTATIC
+      java/lang/invoke/LambdaMetafactory.metafactory(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+      // arguments:
+      (Landroid/content/DialogInterface;I)V, 
+      // handle kind 0x7 : INVOKESPECIAL
+      com/example/renqingyou/noandroidxfragment/MainActivity.lambda$popDialog1$2(Landroid/content/DialogInterface;I)V, 
+      (Landroid/content/DialogInterface;I)V
+    ]
+    INVOKEVIRTUAL android/app/AlertDialog$Builder.setNeutralButton (Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    POP
+   L8
+    LINENUMBER 55 L8
+    ALOAD 1
+    INVOKEVIRTUAL android/app/AlertDialog$Builder.show ()Landroid/app/AlertDialog;
+    ALOAD 0
+    INVOKEVIRTUAL android/app/AlertDialog.setOwnerActivity (Landroid/app/Activity;)V
+   L9
+    LINENUMBER 56 L9
+    RETURN
+   L10
+    LOCALVARIABLE this Lcom/example/renqingyou/noandroidxfragment/MainActivity; L0 L10 0
+    LOCALVARIABLE builder Landroid/app/AlertDialog$Builder; L1 L10 1
+    MAXSTACK = 3
     MAXLOCALS = 2
 
-  // access flags 0x11
-  // signature (Landroid/widget/AdapterView<*>;Landroid/view/View;IJ)V
-  // declaration: void onItemClick(android.widget.AdapterView<?>, android.view.View, int, long)
-  public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    ALOAD 2
-    INVOKEVIRTUAL android/view/View.getTag ()Ljava/lang/Object;
-    CHECKCAST java/lang/Integer
-    INVOKEVIRTUAL java/lang/Integer.intValue ()I
-    ISTORE 1
-    ALOAD 0
-    GETFIELD com/unionpay/mobile/android/widgets/al.a : Lcom/unionpay/mobile/android/widgets/ai;
-    ALOAD 0
-    GETFIELD com/unionpay/mobile/android/widgets/al.a : Lcom/unionpay/mobile/android/widgets/ai;
-    GETFIELD com/unionpay/mobile/android/widgets/ai.c : Landroid/content/Context;
+  // access flags 0x1
+  public printV(Landroid/view/View;)V
+   L0
+    LINENUMBER 59 L0
+    LDC "rqy"
     NEW java/lang/StringBuilder
     DUP
     INVOKESPECIAL java/lang/StringBuilder.<init> ()V
-    ALOAD 0
-    GETFIELD com/unionpay/mobile/android/widgets/al.a : Lcom/unionpay/mobile/android/widgets/ai;
-    INVOKEVIRTUAL com/unionpay/mobile/android/widgets/ai.v ()Ljava/lang/String;
+    LDC "View--"
     INVOKEVIRTUAL java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;
-    ALOAD 0
-    GETFIELD com/unionpay/mobile/android/widgets/al.a : Lcom/unionpay/mobile/android/widgets/ai;
-    INVOKEVIRTUAL com/unionpay/mobile/android/widgets/ai.d ()Ljava/lang/String;
-    INVOKEVIRTUAL java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;
-    INVOKEVIRTUAL java/lang/StringBuilder.toString ()Ljava/lang/String;
-    GETSTATIC com/unionpay/mobile/android/utils/o.h : [Ljava/lang/String;
-    ICONST_3
-    ANEWARRAY java/lang/Object
-    DUP
-    ICONST_0
-    ALOAD 0
-    GETFIELD com/unionpay/mobile/android/widgets/al.a : Lcom/unionpay/mobile/android/widgets/ai;
-    ILOAD 1
-    LDC "type"
-    INVOKESTATIC com/unionpay/mobile/android/widgets/ai.a (Lcom/unionpay/mobile/android/widgets/ai;ILjava/lang/String;)Ljava/lang/String;
-    AASTORE
-    DUP
-    ICONST_1
-    ILOAD 3
-    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
-    AASTORE
-    DUP
-    ICONST_2
-    ALOAD 0
-    GETFIELD com/unionpay/mobile/android/widgets/al.a : Lcom/unionpay/mobile/android/widgets/ai;
-    ILOAD 1
-    ILOAD 3
-    LDC "label"
-    INVOKESTATIC com/unionpay/mobile/android/widgets/ai.a (Lcom/unionpay/mobile/android/widgets/ai;IILjava/lang/String;)Ljava/lang/String;
-    AASTORE
-    INVOKEVIRTUAL com/unionpay/mobile/android/widgets/ai.a (Landroid/content/Context;Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/Object;)V
-    ALOAD 0
-    GETFIELD com/unionpay/mobile/android/widgets/al.a : Lcom/unionpay/mobile/android/widgets/ai;
-    ILOAD 1
-    ILOAD 3
-    INVOKESTATIC com/unionpay/mobile/android/widgets/ai.a (Lcom/unionpay/mobile/android/widgets/ai;II)V
-    ALOAD 0
-    GETFIELD com/unionpay/mobile/android/widgets/al.a : Lcom/unionpay/mobile/android/widgets/ai;
-    INVOKESTATIC com/unionpay/mobile/android/widgets/ai.a (Lcom/unionpay/mobile/android/widgets/ai;)Landroid/widget/PopupWindow;
-    IFNULL L0
-    ALOAD 0
-    GETFIELD com/unionpay/mobile/android/widgets/al.a : Lcom/unionpay/mobile/android/widgets/ai;
-    INVOKESTATIC com/unionpay/mobile/android/widgets/ai.a (Lcom/unionpay/mobile/android/widgets/ai;)Landroid/widget/PopupWindow;
-    INVOKEVIRTUAL android/widget/PopupWindow.dismiss ()V
-   L0
     ALOAD 1
-    ALOAD 2
-    ILOAD 3
-    INVOKESTATIC com/sensorsdata/analytics/android/sdk/SensorsDataAutoTrackHelper.trackListView (Landroid/widget/AdapterView;Landroid/view/View;I)V
+    INVOKEVIRTUAL java/lang/StringBuilder.append (Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    INVOKEVIRTUAL java/lang/StringBuilder.toString ()Ljava/lang/String;
+    INVOKESTATIC android/util/Log.e (Ljava/lang/String;Ljava/lang/String;)I
+    POP
+   L1
+    LINENUMBER 60 L1
     RETURN
-    MAXSTACK = 11
-    MAXLOCALS = 6
-  @Lcom/sensorsdata/analytics/android/sdk/SensorsDataInstrumented;() // invisible
+   L2
+    LOCALVARIABLE this Lcom/example/renqingyou/noandroidxfragment/MainActivity; L0 L2 0
+    LOCALVARIABLE v Landroid/view/View; L0 L2 1
+    MAXSTACK = 3
+    MAXLOCALS = 2
+
+  // access flags 0x2
+  private add(II)I
+   L0
+    LINENUMBER 63 L0
+    ILOAD 1
+    ILOAD 2
+    IADD
+    IRETURN
+   L1
+    LOCALVARIABLE this Lcom/example/renqingyou/noandroidxfragment/MainActivity; L0 L1 0
+    LOCALVARIABLE a I L0 L1 1
+    LOCALVARIABLE b I L0 L1 2
+    MAXSTACK = 2
+    MAXLOCALS = 3
+
+  // access flags 0x4
+  protected onCreate(Landroid/os/Bundle;)V
+  @Landroid/support/annotation/RequiresApi;(api=21) // invisible
+   L0
+    LINENUMBER 69 L0
+    ALOAD 0
+    ALOAD 1
+    INVOKESPECIAL android/support/v7/app/AppCompatActivity.onCreate (Landroid/os/Bundle;)V
+   L1
+    LINENUMBER 70 L1
+    ALOAD 0
+    ALOAD 0
+    GETFIELD com/example/renqingyou/noandroidxfragment/MainActivity.a : Ljava/lang/String;
+    ICONST_0
+    INVOKESTATIC android/widget/Toast.makeText (Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    INVOKEVIRTUAL android/widget/Toast.show ()V
+   L2
+    LINENUMBER 71 L2
+    ALOAD 0
+    LDC 2131427357
+    INVOKEVIRTUAL com/example/renqingyou/noandroidxfragment/MainActivity.setContentView (I)V
+   L3
+    LINENUMBER 72 L3
+    ALOAD 0
+    INVOKEVIRTUAL com/example/renqingyou/noandroidxfragment/MainActivity.getSupportActionBar ()Landroid/support/v7/app/ActionBar;
+    ASTORE 2
+   L4
+    LINENUMBER 73 L4
+    ALOAD 2
+    LDC "ActionBar Title"
+    INVOKEVIRTUAL android/support/v7/app/ActionBar.setTitle (Ljava/lang/CharSequence;)V
+   L5
+    LINENUMBER 74 L5
+    NEW android/app/AlertDialog$Builder
+    DUP
+    ALOAD 0
+    INVOKESPECIAL android/app/AlertDialog$Builder.<init> (Landroid/content/Context;)V
+    ASTORE 3
+   L6
+    LINENUMBER 75 L6
+    ALOAD 3
+    INVOKEVIRTUAL android/app/AlertDialog$Builder.create ()Landroid/app/AlertDialog;
+    ASTORE 4
+   L7
+    LINENUMBER 76 L7
+    NEW android/view/View
+    DUP
+    ALOAD 0
+    INVOKESPECIAL android/view/View.<init> (Landroid/content/Context;)V
+    ASTORE 5
+   L8
+    LINENUMBER 78 L8
+    ALOAD 0
+    INVOKESPECIAL com/example/renqingyou/noandroidxfragment/MainActivity.setToolbar ()V
+   L9
+    LINENUMBER 81 L9
+    NEW android/widget/ListView
+    DUP
+    ALOAD 0
+    INVOKESPECIAL android/widget/ListView.<init> (Landroid/content/Context;)V
+    ASTORE 6
+   L10
+    LINENUMBER 82 L10
+    ALOAD 6
+    ALOAD 0
+    ALOAD 5
+    INVOKEDYNAMIC onItemClick(Lcom/example/renqingyou/noandroidxfragment/MainActivity;Landroid/view/View;)Landroid/widget/AdapterView$OnItemClickListener; [
+      // handle kind 0x6 : INVOKESTATIC
+      java/lang/invoke/LambdaMetafactory.metafactory(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+      // arguments:
+      (Landroid/widget/AdapterView;Landroid/view/View;IJ)V, 
+      // handle kind 0x7 : INVOKESPECIAL
+      com/example/renqingyou/noandroidxfragment/MainActivity.lambda$onCreate$3(Landroid/view/View;Landroid/widget/AdapterView;Landroid/view/View;IJ)V, 
+      (Landroid/widget/AdapterView;Landroid/view/View;IJ)V
+    ]
+    INVOKEVIRTUAL android/widget/ListView.setOnItemClickListener (Landroid/widget/AdapterView$OnItemClickListener;)V
+   L11
+    LINENUMBER 86 L11
+    ALOAD 0
+    LDC 2131230847
+    INVOKEVIRTUAL com/example/renqingyou/noandroidxfragment/MainActivity.findViewById (I)Landroid/view/View;
+    ALOAD 0
+    INVOKEDYNAMIC onClick(Lcom/example/renqingyou/noandroidxfragment/MainActivity;)Landroid/view/View$OnClickListener; [
+      // handle kind 0x6 : INVOKESTATIC
+      java/lang/invoke/LambdaMetafactory.metafactory(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+      // arguments:
+      (Landroid/view/View;)V, 
+      // handle kind 0x7 : INVOKESPECIAL
+      com/example/renqingyou/noandroidxfragment/MainActivity.lambda$onCreate$4(Landroid/view/View;)V, 
+      (Landroid/view/View;)V
+    ]
+    INVOKEVIRTUAL android/view/View.setOnClickListener (Landroid/view/View$OnClickListener;)V
+   L12
+    LINENUMBER 91 L12
+    ALOAD 0
+    LDC 2131230760
+    INVOKEVIRTUAL com/example/renqingyou/noandroidxfragment/MainActivity.findViewById (I)Landroid/view/View;
+    ALOAD 0
+    INVOKEDYNAMIC onClick(Lcom/example/renqingyou/noandroidxfragment/MainActivity;)Landroid/view/View$OnClickListener; [
+      // handle kind 0x6 : INVOKESTATIC
+      java/lang/invoke/LambdaMetafactory.metafactory(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+      // arguments:
+      (Landroid/view/View;)V, 
+      // handle kind 0x7 : INVOKESPECIAL
+      com/example/renqingyou/noandroidxfragment/MainActivity.lambda$onCreate$5(Landroid/view/View;)V, 
+      (Landroid/view/View;)V
+    ]
+    INVOKEVIRTUAL android/view/View.setOnClickListener (Landroid/view/View$OnClickListener;)V
+   L13
+    LINENUMBER 95 L13
+    ALOAD 0
+    LDC 2131230761
+    INVOKEVIRTUAL com/example/renqingyou/noandroidxfragment/MainActivity.findViewById (I)Landroid/view/View;
+    ALOAD 0
+    INVOKEDYNAMIC onClick(Lcom/example/renqingyou/noandroidxfragment/MainActivity;)Landroid/view/View$OnClickListener; [
+      // handle kind 0x6 : INVOKESTATIC
+      java/lang/invoke/LambdaMetafactory.metafactory(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+      // arguments:
+      (Landroid/view/View;)V, 
+      // handle kind 0x7 : INVOKESPECIAL
+      com/example/renqingyou/noandroidxfragment/MainActivity.lambda$onCreate$6(Landroid/view/View;)V, 
+      (Landroid/view/View;)V
+    ]
+    INVOKEVIRTUAL android/view/View.setOnClickListener (Landroid/view/View$OnClickListener;)V
+   L14
+    LINENUMBER 96 L14
+    ALOAD 0
+    LDC 2131230762
+    INVOKEVIRTUAL com/example/renqingyou/noandroidxfragment/MainActivity.findViewById (I)Landroid/view/View;
+    ALOAD 0
+    INVOKEDYNAMIC onClick(Lcom/example/renqingyou/noandroidxfragment/MainActivity;)Landroid/view/View$OnClickListener; [
+      // handle kind 0x6 : INVOKESTATIC
+      java/lang/invoke/LambdaMetafactory.metafactory(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+      // arguments:
+      (Landroid/view/View;)V, 
+      // handle kind 0x7 : INVOKESPECIAL
+      com/example/renqingyou/noandroidxfragment/MainActivity.lambda$onCreate$7(Landroid/view/View;)V, 
+      (Landroid/view/View;)V
+    ]
+    INVOKEVIRTUAL android/view/View.setOnClickListener (Landroid/view/View$OnClickListener;)V
+   L15
+    LINENUMBER 101 L15
+    ALOAD 0
+    LDC 2131230763
+    INVOKEVIRTUAL com/example/renqingyou/noandroidxfragment/MainActivity.findViewById (I)Landroid/view/View;
+    ALOAD 0
+    INVOKEDYNAMIC onClick(Lcom/example/renqingyou/noandroidxfragment/MainActivity;)Landroid/view/View$OnClickListener; [
+      // handle kind 0x6 : INVOKESTATIC
+      java/lang/invoke/LambdaMetafactory.metafactory(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+      // arguments:
+      (Landroid/view/View;)V, 
+      // handle kind 0x7 : INVOKESPECIAL
+      com/example/renqingyou/noandroidxfragment/MainActivity.lambda$onCreate$8(Landroid/view/View;)V, 
+      (Landroid/view/View;)V
+    ]
+    INVOKEVIRTUAL android/view/View.setOnClickListener (Landroid/view/View$OnClickListener;)V
+   L16
+    LINENUMBER 107 L16
+    NEW android/support/design/widget/NavigationView
+    DUP
+    ALOAD 0
+    INVOKESPECIAL android/support/design/widget/NavigationView.<init> (Landroid/content/Context;)V
+    ASTORE 7
+   L17
+    LINENUMBER 108 L17
+    ALOAD 7
+    INVOKEDYNAMIC onNavigationItemSelected()Landroid/support/design/widget/NavigationView$OnNavigationItemSelectedListener; [
+      // handle kind 0x6 : INVOKESTATIC
+      java/lang/invoke/LambdaMetafactory.metafactory(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+      // arguments:
+      (Landroid/view/MenuItem;)Z, 
+      // handle kind 0x6 : INVOKESTATIC
+      com/example/renqingyou/noandroidxfragment/MainActivity.lambda$onCreate$9(Landroid/view/MenuItem;)Z, 
+      (Landroid/view/MenuItem;)Z
+    ]
+    INVOKEVIRTUAL android/support/design/widget/NavigationView.setNavigationItemSelectedListener (Landroid/support/design/widget/NavigationView$OnNavigationItemSelectedListener;)V
+   L18
+    LINENUMBER 110 L18
+    ALOAD 0
+    LDC 2131230924
+    INVOKEVIRTUAL com/example/renqingyou/noandroidxfragment/MainActivity.findViewById (I)Landroid/view/View;
+    CHECKCAST android/support/v7/widget/SwitchCompat
+    ASTORE 8
+   L19
+    LINENUMBER 111 L19
+    ALOAD 8
+    INVOKEDYNAMIC onCheckedChanged()Landroid/widget/CompoundButton$OnCheckedChangeListener; [
+      // handle kind 0x6 : INVOKESTATIC
+      java/lang/invoke/LambdaMetafactory.metafactory(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+      // arguments:
+      (Landroid/widget/CompoundButton;Z)V, 
+      // handle kind 0x6 : INVOKESTATIC
+      com/example/renqingyou/noandroidxfragment/MainActivity.lambda$onCreate$10(Landroid/widget/CompoundButton;Z)V, 
+      (Landroid/widget/CompoundButton;Z)V
+    ]
+    INVOKEVIRTUAL android/support/v7/widget/SwitchCompat.setOnCheckedChangeListener (Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
+   L20
+    LINENUMBER 114 L20
+    ALOAD 0
+    LDC 2131230960
+    INVOKEVIRTUAL com/example/renqingyou/noandroidxfragment/MainActivity.findViewById (I)Landroid/view/View;
+    ALOAD 0
+    INVOKEDYNAMIC onClick(Lcom/example/renqingyou/noandroidxfragment/MainActivity;)Landroid/view/View$OnClickListener; [
+      // handle kind 0x6 : INVOKESTATIC
+      java/lang/invoke/LambdaMetafactory.metafactory(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+      // arguments:
+      (Landroid/view/View;)V, 
+      // handle kind 0x7 : INVOKESPECIAL
+      com/example/renqingyou/noandroidxfragment/MainActivity.lambda$onCreate$11(Landroid/view/View;)V, 
+      (Landroid/view/View;)V
+    ]
+    INVOKEVIRTUAL android/view/View.setOnClickListener (Landroid/view/View$OnClickListener;)V
+   L21
+    LINENUMBER 119 L21
+    RETURN
+   L22
+    LOCALVARIABLE this Lcom/example/renqingyou/noandroidxfragment/MainActivity; L0 L22 0
+    LOCALVARIABLE savedInstanceState Landroid/os/Bundle; L0 L22 1
+    LOCALVARIABLE actionBar Landroid/support/v7/app/ActionBar; L4 L22 2
+    LOCALVARIABLE builder Landroid/app/AlertDialog$Builder; L6 L22 3
+    LOCALVARIABLE dialog Landroid/app/Dialog; L7 L22 4
+    LOCALVARIABLE view1 Landroid/view/View; L8 L22 5
+    LOCALVARIABLE listView Landroid/widget/ListView; L10 L22 6
+    LOCALVARIABLE navigationView Landroid/support/design/widget/NavigationView; L17 L22 7
+    LOCALVARIABLE switchCompat Landroid/support/v7/widget/SwitchCompat; L19 L22 8
+    MAXSTACK = 3
+    MAXLOCALS = 9
+
+  // access flags 0x2
+  private testStatic()V
+   L0
+    LINENUMBER 123 L0
+    ALOAD 0
+    LDC 2131230763
+    INVOKEVIRTUAL com/example/renqingyou/noandroidxfragment/MainActivity.findViewById (I)Landroid/view/View;
+    INVOKEDYNAMIC onClick()Landroid/view/View$OnClickListener; [
+      // handle kind 0x6 : INVOKESTATIC
+      java/lang/invoke/LambdaMetafactory.metafactory(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+      // arguments:
+      (Landroid/view/View;)V, 
+      // handle kind 0x6 : INVOKESTATIC
+      com/example/renqingyou/noandroidxfragment/Test.click(Landroid/view/View;)V, 
+      (Landroid/view/View;)V
+    ]
+    INVOKEVIRTUAL android/view/View.setOnClickListener (Landroid/view/View$OnClickListener;)V
+   L1
+    LINENUMBER 126 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lcom/example/renqingyou/noandroidxfragment/MainActivity; L0 L2 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x2
+  private setToolbar()V
+   L0
+    LINENUMBER 129 L0
+    NEW android/support/v7/widget/Toolbar
+    DUP
+    ALOAD 0
+    INVOKESPECIAL android/support/v7/widget/Toolbar.<init> (Landroid/content/Context;)V
+    ASTORE 1
+   L1
+    LINENUMBER 130 L1
+    ALOAD 1
+    NEW com/example/renqingyou/noandroidxfragment/Test
+    DUP
+    INVOKESPECIAL com/example/renqingyou/noandroidxfragment/Test.<init> ()V
+    DUP
+    INVOKEVIRTUAL java/lang/Object.getClass ()Ljava/lang/Class;
+    POP
+    INVOKEDYNAMIC onClick(Lcom/example/renqingyou/noandroidxfragment/Test;)Landroid/view/View$OnClickListener; [
+      // handle kind 0x6 : INVOKESTATIC
+      java/lang/invoke/LambdaMetafactory.metafactory(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+      // arguments:
+      (Landroid/view/View;)V, 
+      // handle kind 0x5 : INVOKEVIRTUAL
+      com/example/renqingyou/noandroidxfragment/Test.myMethod(Landroid/view/View;)V, 
+      (Landroid/view/View;)V
+    ]
+    INVOKEVIRTUAL android/support/v7/widget/Toolbar.setOnClickListener (Landroid/view/View$OnClickListener;)V
+   L2
+    LINENUMBER 131 L2
+    ALOAD 1
+    INVOKEDYNAMIC onClick()Landroid/view/View$OnClickListener; [
+      // handle kind 0x6 : INVOKESTATIC
+      java/lang/invoke/LambdaMetafactory.metafactory(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+      // arguments:
+      (Landroid/view/View;)V, 
+      // handle kind 0x6 : INVOKESTATIC
+      com/example/renqingyou/noandroidxfragment/Test.click(Landroid/view/View;)V, 
+      (Landroid/view/View;)V
+    ]
+    INVOKEVIRTUAL android/support/v7/widget/Toolbar.setOnClickListener (Landroid/view/View$OnClickListener;)V
+   L3
+    LINENUMBER 132 L3
+    ALOAD 1
+    INVOKEDYNAMIC onClick()Landroid/view/View$OnClickListener; [
+      // handle kind 0x6 : INVOKESTATIC
+      java/lang/invoke/LambdaMetafactory.metafactory(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+      // arguments:
+      (Landroid/view/View;)V, 
+      // handle kind 0x6 : INVOKESTATIC
+      com/example/renqingyou/noandroidxfragment/MainActivity.lambda$setToolbar$12(Landroid/view/View;)V, 
+      (Landroid/view/View;)V
+    ]
+    INVOKEVIRTUAL android/support/v7/widget/Toolbar.setOnClickListener (Landroid/view/View$OnClickListener;)V
+   L4
+    LINENUMBER 133 L4
+    ALOAD 1
+    NEW com/example/renqingyou/noandroidxfragment/MainActivity$1
+    DUP
+    ALOAD 0
+    INVOKESPECIAL com/example/renqingyou/noandroidxfragment/MainActivity$1.<init> (Lcom/example/renqingyou/noandroidxfragment/MainActivity;)V
+    INVOKEVIRTUAL android/support/v7/widget/Toolbar.setOnMenuItemClickListener (Landroid/support/v7/widget/Toolbar$OnMenuItemClickListener;)V
+   L5
+    LINENUMBER 139 L5
+    RETURN
+   L6
+    LOCALVARIABLE this Lcom/example/renqingyou/noandroidxfragment/MainActivity; L0 L6 0
+    LOCALVARIABLE toolbar Landroid/support/v7/widget/Toolbar; L1 L6 1
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public popDialog()V
+   L0
+    LINENUMBER 142 L0
+    NEW android/app/AlertDialog$Builder
+    DUP
+    ALOAD 0
+    INVOKESPECIAL android/app/AlertDialog$Builder.<init> (Landroid/content/Context;)V
+    ASTORE 1
+   L1
+    LINENUMBER 143 L1
+    ALOAD 1
+    LDC "\u95ee\u9898\uff1a"
+    INVOKEVIRTUAL android/app/AlertDialog$Builder.setTitle (Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+    POP
+   L2
+    LINENUMBER 144 L2
+    ALOAD 1
+    LDC "\u8bf7\u95ee\u4f60\u6ee1\u5341\u516b\u5c81\u4e86\u5417?"
+    INVOKEVIRTUAL android/app/AlertDialog$Builder.setMessage (Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+    POP
+   L3
+    LINENUMBER 145 L3
+    ALOAD 1
+    LDC 2131558401
+    INVOKEVIRTUAL android/app/AlertDialog$Builder.setIcon (I)Landroid/app/AlertDialog$Builder;
+    POP
+   L4
+    LINENUMBER 147 L4
+    ALOAD 1
+    ICONST_1
+    INVOKEVIRTUAL android/app/AlertDialog$Builder.setCancelable (Z)Landroid/app/AlertDialog$Builder;
+    POP
+   L5
+    LINENUMBER 149 L5
+    ALOAD 1
+    LDC "\u662f\u7684"
+    ALOAD 0
+    INVOKEDYNAMIC onClick(Lcom/example/renqingyou/noandroidxfragment/MainActivity;)Landroid/content/DialogInterface$OnClickListener; [
+      // handle kind 0x6 : INVOKESTATIC
+      java/lang/invoke/LambdaMetafactory.metafactory(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+      // arguments:
+      (Landroid/content/DialogInterface;I)V, 
+      // handle kind 0x7 : INVOKESPECIAL
+      com/example/renqingyou/noandroidxfragment/MainActivity.lambda$popDialog$13(Landroid/content/DialogInterface;I)V, 
+      (Landroid/content/DialogInterface;I)V
+    ]
+    INVOKEVIRTUAL android/app/AlertDialog$Builder.setPositiveButton (Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    POP
+   L6
+    LINENUMBER 154 L6
+    ALOAD 1
+    LDC "\u4e0d\u662f"
+    ALOAD 0
+    INVOKEDYNAMIC onClick(Lcom/example/renqingyou/noandroidxfragment/MainActivity;)Landroid/content/DialogInterface$OnClickListener; [
+      // handle kind 0x6 : INVOKESTATIC
+      java/lang/invoke/LambdaMetafactory.metafactory(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+      // arguments:
+      (Landroid/content/DialogInterface;I)V, 
+      // handle kind 0x7 : INVOKESPECIAL
+      com/example/renqingyou/noandroidxfragment/MainActivity.lambda$popDialog$14(Landroid/content/DialogInterface;I)V, 
+      (Landroid/content/DialogInterface;I)V
+    ]
+    INVOKEVIRTUAL android/app/AlertDialog$Builder.setNegativeButton (Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    POP
+   L7
+    LINENUMBER 159 L7
+    ALOAD 1
+    LDC "\u4fdd\u5bc6"
+    ALOAD 0
+    INVOKEDYNAMIC onClick(Lcom/example/renqingyou/noandroidxfragment/MainActivity;)Landroid/content/DialogInterface$OnClickListener; [
+      // handle kind 0x6 : INVOKESTATIC
+      java/lang/invoke/LambdaMetafactory.metafactory(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+      // arguments:
+      (Landroid/content/DialogInterface;I)V, 
+      // handle kind 0x7 : INVOKESPECIAL
+      com/example/renqingyou/noandroidxfragment/MainActivity.lambda$popDialog$15(Landroid/content/DialogInterface;I)V, 
+      (Landroid/content/DialogInterface;I)V
+    ]
+    INVOKEVIRTUAL android/app/AlertDialog$Builder.setNeutralButton (Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    POP
+   L8
+    LINENUMBER 163 L8
+    ALOAD 1
+    INVOKEVIRTUAL android/app/AlertDialog$Builder.show ()Landroid/app/AlertDialog;
+    POP
+   L9
+    LINENUMBER 164 L9
+    ALOAD 1
+    LDC "\u4fdd\u5bc6"
+    NEW com/example/renqingyou/noandroidxfragment/MainActivity$MyListenner
+    DUP
+    ALOAD 0
+    INVOKESPECIAL com/example/renqingyou/noandroidxfragment/MainActivity$MyListenner.<init> (Lcom/example/renqingyou/noandroidxfragment/MainActivity;)V
+    INVOKEVIRTUAL android/app/AlertDialog$Builder.setNeutralButton (Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    POP
+   L10
+    LINENUMBER 165 L10
+    ALOAD 1
+    INVOKEVIRTUAL android/app/AlertDialog$Builder.show ()Landroid/app/AlertDialog;
+    POP
+   L11
+    LINENUMBER 166 L11
+    RETURN
+   L12
+    LOCALVARIABLE this Lcom/example/renqingyou/noandroidxfragment/MainActivity; L0 L12 0
+    LOCALVARIABLE builder Landroid/app/AlertDialog$Builder; L1 L12 1
+    MAXSTACK = 5
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public onClick(Landroid/view/View;)V
+   L0
+    LINENUMBER 170 L0
+    NEW android/content/Intent
+    DUP
+    LDC "aaa"
+    INVOKESPECIAL android/content/Intent.<init> (Ljava/lang/String;)V
+    ASTORE 2
+   L1
+    LINENUMBER 171 L1
+    ALOAD 0
+    ALOAD 2
+    INVOKEVIRTUAL com/example/renqingyou/noandroidxfragment/MainActivity.startActivity (Landroid/content/Intent;)V
+   L2
+    LINENUMBER 172 L2
+    RETURN
+   L3
+    LOCALVARIABLE this Lcom/example/renqingyou/noandroidxfragment/MainActivity; L0 L3 0
+    LOCALVARIABLE v Landroid/view/View; L0 L3 1
+    LOCALVARIABLE intent Landroid/content/Intent; L1 L3 2
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x1002
+  private synthetic lambda$popDialog$15(Landroid/content/DialogInterface;I)V
+   L0
+    LINENUMBER 160 L0
+    ALOAD 0
+    LDC "\u4f60\u9009\u62e9\u4e86\u4fdd\u5bc6"
+    ICONST_0
+    INVOKESTATIC android/widget/Toast.makeText (Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    INVOKEVIRTUAL android/widget/Toast.show ()V
+   L1
+    LINENUMBER 161 L1
+    ALOAD 1
+    INVOKEINTERFACE android/content/DialogInterface.dismiss ()V
+   L2
+    LINENUMBER 162 L2
+    RETURN
+   L3
+    LOCALVARIABLE this Lcom/example/renqingyou/noandroidxfragment/MainActivity; L0 L3 0
+    LOCALVARIABLE dialog Landroid/content/DialogInterface; L0 L3 1
+    LOCALVARIABLE which I L0 L3 2
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x1002
+  private synthetic lambda$popDialog$14(Landroid/content/DialogInterface;I)V
+   L0
+    LINENUMBER 155 L0
+    ALOAD 0
+    LDC "\u4f60\u70b9\u51fb\u4e86\u4e0d\u662f"
+    ICONST_0
+    INVOKESTATIC android/widget/Toast.makeText (Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    INVOKEVIRTUAL android/widget/Toast.show ()V
+   L1
+    LINENUMBER 156 L1
+    ALOAD 1
+    INVOKEINTERFACE android/content/DialogInterface.dismiss ()V
+   L2
+    LINENUMBER 157 L2
+    RETURN
+   L3
+    LOCALVARIABLE this Lcom/example/renqingyou/noandroidxfragment/MainActivity; L0 L3 0
+    LOCALVARIABLE dialog Landroid/content/DialogInterface; L0 L3 1
+    LOCALVARIABLE which I L0 L3 2
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x1002
+  private synthetic lambda$popDialog$13(Landroid/content/DialogInterface;I)V
+   L0
+    LINENUMBER 150 L0
+    ALOAD 0
+    LDC "\u4f60\u70b9\u51fb\u4e86\u662f\u7684"
+    ICONST_0
+    INVOKESTATIC android/widget/Toast.makeText (Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    INVOKEVIRTUAL android/widget/Toast.show ()V
+   L1
+    LINENUMBER 151 L1
+    ALOAD 1
+    INVOKEINTERFACE android/content/DialogInterface.dismiss ()V
+   L2
+    LINENUMBER 152 L2
+    RETURN
+   L3
+    LOCALVARIABLE this Lcom/example/renqingyou/noandroidxfragment/MainActivity; L0 L3 0
+    LOCALVARIABLE dialog Landroid/content/DialogInterface; L0 L3 1
+    LOCALVARIABLE which I L0 L3 2
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x100A
+  private static synthetic lambda$setToolbar$12(Landroid/view/View;)V
+   L0
+    LINENUMBER 132 L0
+    NEW com/example/renqingyou/noandroidxfragment/Test
+    DUP
+    INVOKESPECIAL com/example/renqingyou/noandroidxfragment/Test.<init> ()V
+    ALOAD 0
+    INVOKEVIRTUAL com/example/renqingyou/noandroidxfragment/Test.myMethod (Landroid/view/View;)V
+    RETURN
+   L1
+    LOCALVARIABLE v Landroid/view/View; L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1002
+  private synthetic lambda$onCreate$11(Landroid/view/View;)V
+   L0
+    LINENUMBER 115 L0
+    NEW android/content/Intent
+    DUP
+    ALOAD 0
+    LDC Lcom/example/renqingyou/noandroidxfragment/ViewPagerActivity;.class
+    INVOKESPECIAL android/content/Intent.<init> (Landroid/content/Context;Ljava/lang/Class;)V
+    ASTORE 2
+   L1
+    LINENUMBER 116 L1
+    ALOAD 0
+    ALOAD 2
+    INVOKEVIRTUAL com/example/renqingyou/noandroidxfragment/MainActivity.startActivity (Landroid/content/Intent;)V
+   L2
+    LINENUMBER 117 L2
+    RETURN
+   L3
+    LOCALVARIABLE this Lcom/example/renqingyou/noandroidxfragment/MainActivity; L0 L3 0
+    LOCALVARIABLE view Landroid/view/View; L0 L3 1
+    LOCALVARIABLE intent Landroid/content/Intent; L1 L3 2
+    MAXSTACK = 4
+    MAXLOCALS = 3
+
+  // access flags 0x100A
+  private static synthetic lambda$onCreate$10(Landroid/widget/CompoundButton;Z)V
+   L0
+    LINENUMBER 113 L0
+    RETURN
+   L1
+    LOCALVARIABLE compoundButton Landroid/widget/CompoundButton; L0 L1 0
+    LOCALVARIABLE b Z L0 L1 1
+    MAXSTACK = 0
+    MAXLOCALS = 2
+
+  // access flags 0x100A
+  private static synthetic lambda$onCreate$9(Landroid/view/MenuItem;)Z
+   L0
+    LINENUMBER 108 L0
+    ICONST_0
+    IRETURN
+   L1
+    LOCALVARIABLE menuItem Landroid/view/MenuItem; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1002
+  private synthetic lambda$onCreate$8(Landroid/view/View;)V
+   L0
+    LINENUMBER 102 L0
+    NEW android/content/Intent
+    DUP
+    ALOAD 0
+    LDC Lcom/example/renqingyou/noandroidxfragment/MyTabHostActivity;.class
+    INVOKESPECIAL android/content/Intent.<init> (Landroid/content/Context;Ljava/lang/Class;)V
+    ASTORE 2
+   L1
+    LINENUMBER 103 L1
+    ALOAD 0
+    ALOAD 2
+    INVOKEVIRTUAL com/example/renqingyou/noandroidxfragment/MainActivity.startActivity (Landroid/content/Intent;)V
+   L2
+    LINENUMBER 104 L2
+    RETURN
+   L3
+    LOCALVARIABLE this Lcom/example/renqingyou/noandroidxfragment/MainActivity; L0 L3 0
+    LOCALVARIABLE v Landroid/view/View; L0 L3 1
+    LOCALVARIABLE intent Landroid/content/Intent; L1 L3 2
+    MAXSTACK = 4
+    MAXLOCALS = 3
+
+  // access flags 0x1002
+  private synthetic lambda$onCreate$7(Landroid/view/View;)V
+   L0
+    LINENUMBER 97 L0
+    NEW android/content/Intent
+    DUP
+    ALOAD 0
+    LDC Lcom/example/renqingyou/noandroidxfragment/MyTabLayout;.class
+    INVOKESPECIAL android/content/Intent.<init> (Landroid/content/Context;Ljava/lang/Class;)V
+    ASTORE 2
+   L1
+    LINENUMBER 98 L1
+    ALOAD 0
+    ALOAD 2
+    INVOKEVIRTUAL com/example/renqingyou/noandroidxfragment/MainActivity.startActivity (Landroid/content/Intent;)V
+   L2
+    LINENUMBER 99 L2
+    RETURN
+   L3
+    LOCALVARIABLE this Lcom/example/renqingyou/noandroidxfragment/MainActivity; L0 L3 0
+    LOCALVARIABLE view Landroid/view/View; L0 L3 1
+    LOCALVARIABLE intent Landroid/content/Intent; L1 L3 2
+    MAXSTACK = 4
+    MAXLOCALS = 3
+
+  // access flags 0x1002
+  private synthetic lambda$onCreate$6(Landroid/view/View;)V
+   L0
+    LINENUMBER 95 L0
+    ALOAD 0
+    INVOKEVIRTUAL com/example/renqingyou/noandroidxfragment/MainActivity.popDialog1 ()V
+    RETURN
+   L1
+    LOCALVARIABLE this Lcom/example/renqingyou/noandroidxfragment/MainActivity; L0 L1 0
+    LOCALVARIABLE view Landroid/view/View; L0 L1 1
+    MAXSTACK = 1
+    MAXLOCALS = 2
+
+  // access flags 0x1002
+  private synthetic lambda$onCreate$5(Landroid/view/View;)V
+   L0
+    LINENUMBER 92 L0
+    NEW android/content/Intent
+    DUP
+    ALOAD 0
+    LDC Lcom/example/renqingyou/noandroidxfragment/MyFragmentActivity;.class
+    INVOKESPECIAL android/content/Intent.<init> (Landroid/content/Context;Ljava/lang/Class;)V
+    ASTORE 2
+   L1
+    LINENUMBER 93 L1
+    ALOAD 0
+    ALOAD 2
+    INVOKEVIRTUAL com/example/renqingyou/noandroidxfragment/MainActivity.startActivity (Landroid/content/Intent;)V
+   L2
+    LINENUMBER 94 L2
+    RETURN
+   L3
+    LOCALVARIABLE this Lcom/example/renqingyou/noandroidxfragment/MainActivity; L0 L3 0
+    LOCALVARIABLE v Landroid/view/View; L0 L3 1
+    LOCALVARIABLE intent Landroid/content/Intent; L1 L3 2
+    MAXSTACK = 4
+    MAXLOCALS = 3
+
+  // access flags 0x1002
+  private synthetic lambda$onCreate$4(Landroid/view/View;)V
+   L0
+    LINENUMBER 87 L0
+    NEW android/content/Intent
+    DUP
+    ALOAD 0
+    LDC Lcom/example/renqingyou/noandroidxfragment/NavigationViewActivity;.class
+    INVOKESPECIAL android/content/Intent.<init> (Landroid/content/Context;Ljava/lang/Class;)V
+    ASTORE 2
+   L1
+    LINENUMBER 88 L1
+    ALOAD 0
+    ALOAD 2
+    INVOKEVIRTUAL com/example/renqingyou/noandroidxfragment/MainActivity.startActivity (Landroid/content/Intent;)V
+   L2
+    LINENUMBER 89 L2
+    RETURN
+   L3
+    LOCALVARIABLE this Lcom/example/renqingyou/noandroidxfragment/MainActivity; L0 L3 0
+    LOCALVARIABLE view Landroid/view/View; L0 L3 1
+    LOCALVARIABLE intent Landroid/content/Intent; L1 L3 2
+    MAXSTACK = 4
+    MAXLOCALS = 3
+
+  // access flags 0x1002
+  private synthetic lambda$onCreate$3(Landroid/view/View;Landroid/widget/AdapterView;Landroid/view/View;IJ)V
+   L0
+    LINENUMBER 83 L0
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL com/example/renqingyou/noandroidxfragment/MainActivity.printV (Landroid/view/View;)V
+   L1
+    LINENUMBER 84 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lcom/example/renqingyou/noandroidxfragment/MainActivity; L0 L2 0
+    LOCALVARIABLE view1 Landroid/view/View; L0 L2 1
+    LOCALVARIABLE parent Landroid/widget/AdapterView; L0 L2 2
+    LOCALVARIABLE view Landroid/view/View; L0 L2 3
+    LOCALVARIABLE position I L0 L2 4
+    LOCALVARIABLE id J L0 L2 5
+    MAXSTACK = 2
+    MAXLOCALS = 7
+
+  // access flags 0x1002
+  private synthetic lambda$popDialog1$2(Landroid/content/DialogInterface;I)V
+   L0
+    LINENUMBER 52 L0
+    ALOAD 0
+    LDC "\u4f60\u9009\u62e9\u4e86\u4fdd\u5bc6"
+    ICONST_0
+    INVOKESTATIC android/widget/Toast.makeText (Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    INVOKEVIRTUAL android/widget/Toast.show ()V
+   L1
+    LINENUMBER 53 L1
+    ALOAD 1
+    INVOKEINTERFACE android/content/DialogInterface.dismiss ()V
+   L2
+    LINENUMBER 54 L2
+    RETURN
+   L3
+    LOCALVARIABLE this Lcom/example/renqingyou/noandroidxfragment/MainActivity; L0 L3 0
+    LOCALVARIABLE dialog Landroid/content/DialogInterface; L0 L3 1
+    LOCALVARIABLE which I L0 L3 2
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x1002
+  private synthetic lambda$popDialog1$1(Landroid/content/DialogInterface;I)V
+   L0
+    LINENUMBER 47 L0
+    ALOAD 0
+    LDC "\u4f60\u70b9\u51fb\u4e86\u4e0d\u662f"
+    ICONST_0
+    INVOKESTATIC android/widget/Toast.makeText (Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    INVOKEVIRTUAL android/widget/Toast.show ()V
+   L1
+    LINENUMBER 48 L1
+    ALOAD 1
+    INVOKEINTERFACE android/content/DialogInterface.dismiss ()V
+   L2
+    LINENUMBER 49 L2
+    RETURN
+   L3
+    LOCALVARIABLE this Lcom/example/renqingyou/noandroidxfragment/MainActivity; L0 L3 0
+    LOCALVARIABLE dialog Landroid/content/DialogInterface; L0 L3 1
+    LOCALVARIABLE which I L0 L3 2
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x1002
+  private synthetic lambda$popDialog1$0(Landroid/content/DialogInterface;I)V
+   L0
+    LINENUMBER 42 L0
+    ALOAD 0
+    LDC "\u4f60\u70b9\u51fb\u4e86\u662f\u7684"
+    ICONST_0
+    INVOKESTATIC android/widget/Toast.makeText (Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    INVOKEVIRTUAL android/widget/Toast.show ()V
+   L1
+    LINENUMBER 43 L1
+    ALOAD 1
+    INVOKEINTERFACE android/content/DialogInterface.dismiss ()V
+   L2
+    LINENUMBER 44 L2
+    RETURN
+   L3
+    LOCALVARIABLE this Lcom/example/renqingyou/noandroidxfragment/MainActivity; L0 L3 0
+    LOCALVARIABLE dialog Landroid/content/DialogInterface; L0 L3 1
+    LOCALVARIABLE which I L0 L3 2
+    MAXSTACK = 3
+    MAXLOCALS = 3
 }

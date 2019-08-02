@@ -46,7 +46,7 @@ public class MyTabHostActivity extends TabActivity {
         tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
             @Override
             public void onTabChanged(String tabId) {
-                SensorsDataAutoTrackHelper.trackTabHost(tabId);
+                //SensorsDataAutoTrackHelper.trackTabHost(tabId);
             }
         });
         /*tabHost.setOnTabChangedListener(tabId -> {

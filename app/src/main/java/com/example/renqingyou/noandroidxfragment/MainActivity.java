@@ -22,7 +22,9 @@ import android.widget.Toast;
 import com.sensorsdata.analytics.android.sdk.SensorsDataTrackEvent;
 
 
-public class MainActivity extends AppCompatActivity  {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    public String a = "globalString";
+    Toast toast;
 
     /**
      * 提示对话框
@@ -54,36 +56,27 @@ public class MainActivity extends AppCompatActivity  {
     }
 
     public void printV(View v) {
-        Log.e("rqy","View--"+v);
+        Log.e("rqy", "View--" + v);
+    }
+
+    private int add(int a, int b) {
+        return a + b;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Toast.makeText(this, a, Toast.LENGTH_SHORT).show();
         setContentView(R.layout.activity_main);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("ActionBar Title");
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         Dialog dialog = builder.create();
         View view1 = new View(this);
-        findViewById(R.id.bt3).setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, MyTabHostActivity.class);
-            startActivity(intent);
-            printV(v);
-            printV(view1);
-            dialog.dismiss();
-        });
 
-        Toolbar toolbar = new Toolbar(this);
-        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem menuItem) {
-                return false;
-            }
-        });
-
-        toolbar.setOnMenuItemClickListener(menuItem -> false);
+        setToolbar();
+        //oolbar.setOnMenuItemClickListener(menuItem -> false);
 
         ListView listView = new ListView(this);
         listView.setOnItemClickListener((parent, view, position, id) -> {
@@ -95,7 +88,7 @@ public class MainActivity extends AppCompatActivity  {
             startActivity(intent);
         });
 
-       findViewById(R.id.bt0).setOnClickListener(v -> {
+        findViewById(R.id.bt0).setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, MyFragmentActivity.class);
             startActivity(intent);
         });
@@ -125,6 +118,26 @@ public class MainActivity extends AppCompatActivity  {
 
     }
 
+    private void testStatic() {
+        //findViewById(R.id.bt3).setOnClickListener(new Test()::myMethod);
+        findViewById(R.id.bt3).setOnClickListener(Test::click);
+
+        //findViewById(R.id.bt3).setOnClickListener(v -> Test.click(v));
+    }
+
+    private void setToolbar() {
+        Toolbar toolbar = new Toolbar(this);
+        toolbar.setOnClickListener(new Test()::myMethod);
+        toolbar.setOnClickListener(Test::click);
+        toolbar.setOnClickListener(v -> new Test().myMethod(v));
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                return false;
+            }
+        });
+    }
+
     public void popDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("问题：");
@@ -148,11 +161,15 @@ public class MainActivity extends AppCompatActivity  {
             dialog.dismiss();
         });
         builder.show();
-
         builder.setNeutralButton("保密", new MyListenner());
         builder.show();
     }
 
+    @Override
+    public void onClick(View v) {
+        Intent intent = new Intent("aaa");
+        startActivity(intent);
+    }
 
     class MyListenner implements DialogInterface.OnClickListener {
 

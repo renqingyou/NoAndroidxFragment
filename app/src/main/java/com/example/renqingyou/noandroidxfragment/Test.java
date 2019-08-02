@@ -24,6 +24,10 @@ public class Test implements View.OnClickListener{
 
     }
 
+    public static void click(View v){
+
+    }
+
     interface MyListener {
         void click(View v);
     }
