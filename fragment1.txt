@@ -1,0 +1,1019 @@
+// class version 51.0 (51)
+// access flags 0x21
+public class com/xes/chinese/library/fragment/ChsLibWebviewFragment extends android/support/v4/app/Fragment  implements com/xes/questiontype/JudgeCallBack com/xes/questiontype/WebToNativeCallback  {
+
+  // compiled from: ChsLibWebviewFragment.java
+  // access flags 0x0
+  INNERCLASS com/xes/chinese/library/fragment/ChsLibWebviewFragment$2 null null
+  // access flags 0x0
+  INNERCLASS com/xes/chinese/library/fragment/ChsLibWebviewFragment$1 null null
+  // access flags 0x9
+  public static INNERCLASS java/util/concurrent/ThreadPoolExecutor$DiscardOldestPolicy java/util/concurrent/ThreadPoolExecutor DiscardOldestPolicy
+  // access flags 0x19
+  public final static INNERCLASS com/xes/chinese/library/R$layout com/xes/chinese/library/R layout
+  // access flags 0x19
+  public final static INNERCLASS com/xes/chinese/library/R$id com/xes/chinese/library/R id
+  // access flags 0x9
+  public static INNERCLASS android/os/Build$VERSION android/os/Build VERSION
+
+  // access flags 0x1
+  // signature Ljava/util/Map<Ljava/lang/String;Lcom/xes/cloudlearning/bcmpt/bean/UserAnswer;>;
+  // declaration: java.util.Map<java.lang.String, com.xes.cloudlearning.bcmpt.bean.UserAnswer>
+  public Ljava/util/Map; a
+
+  // access flags 0x2
+  private Lcom/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView; b
+
+  // access flags 0x2
+  private Landroid/content/Context; c
+
+  // access flags 0x2
+  private Lcom/google/gson/Gson; d
+
+  // access flags 0x2
+  private I e
+
+  // access flags 0x2
+  private I f
+
+  // access flags 0x2
+  private Lcom/xes/chinese/library/bean/LibQuestionBean; g
+
+  // access flags 0x2
+  private Ljava/lang/String; h
+
+  // access flags 0x2
+  private Lcom/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson; i
+
+  // access flags 0x2
+  private Ljava/util/concurrent/ThreadPoolExecutor; j
+
+  // access flags 0x1
+  public <init>()V
+   L0
+    LINENUMBER 53 L0
+    ALOAD 0
+    INVOKESPECIAL android/support/v4/app/Fragment.<init> ()V
+   L1
+    LINENUMBER 54 L1
+    ALOAD 0
+    NEW java/util/HashMap
+    DUP
+    INVOKESPECIAL java/util/HashMap.<init> ()V
+    PUTFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.a : Ljava/util/Map;
+    RETURN
+    MAXSTACK = 3
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public onAttach(Landroid/content/Context;)V
+   L0
+    LINENUMBER 67 L0
+    ALOAD 0
+    ALOAD 1
+    INVOKESPECIAL android/support/v4/app/Fragment.onAttach (Landroid/content/Context;)V
+   L1
+    LINENUMBER 68 L1
+    ALOAD 0
+    ALOAD 1
+    PUTFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.c : Landroid/content/Context;
+   L2
+    LINENUMBER 69 L2
+    RETURN
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
+    @Landroid/support/annotation/Nullable;() // invisible, parameter 1
+    @Landroid/support/annotation/Nullable;() // invisible, parameter 2
+   L0
+    LINENUMBER 73 L0
+    ALOAD 0
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.c : Landroid/content/Context;
+    GETSTATIC com/xes/chinese/library/R$layout.chslib_webfragment_layout : I
+    ACONST_NULL
+    INVOKESTATIC android/view/View.inflate (Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
+    ASTORE 1
+   L1
+    LINENUMBER 74 L1
+    ALOAD 0
+    ALOAD 1
+    GETSTATIC com/xes/chinese/library/R$id.bdwebview : I
+    INVOKEVIRTUAL android/view/View.findViewById (I)Landroid/view/View;
+    CHECKCAST com/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView
+    PUTFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.b : Lcom/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView;
+   L2
+    LINENUMBER 75 L2
+    ALOAD 0
+    NEW com/google/gson/Gson
+    DUP
+    INVOKESPECIAL com/google/gson/Gson.<init> ()V
+    PUTFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.d : Lcom/google/gson/Gson;
+   L3
+    LINENUMBER 76 L3
+    ALOAD 1
+    ARETURN
+    MAXSTACK = 3
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
+  @Lcom/sensorsdata/analytics/android/sdk/SensorsDataInstrumented;() // invisible
+    @Landroid/support/annotation/Nullable;() // invisible, parameter 1
+    ALOAD 1
+    ASTORE 3
+    ALOAD 2
+    ASTORE 4
+   L0
+    LINENUMBER 81 L0
+    ALOAD 0
+    ALOAD 1
+    ALOAD 2
+    INVOKESPECIAL android/support/v4/app/Fragment.onViewCreated (Landroid/view/View;Landroid/os/Bundle;)V
+   L1
+    LINENUMBER 82 L1
+    ALOAD 0
+    INVOKEVIRTUAL com/xes/chinese/library/fragment/ChsLibWebviewFragment.getArguments ()Landroid/os/Bundle;
+    ASTORE 1
+   L2
+    LINENUMBER 83 L2
+    ALOAD 0
+    ALOAD 1
+    LDC "mode"
+    INVOKEVIRTUAL android/os/Bundle.getInt (Ljava/lang/String;)I
+    PUTFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.e : I
+   L3
+    LINENUMBER 84 L3
+    ALOAD 0
+    ALOAD 1
+    LDC "position"
+    INVOKEVIRTUAL android/os/Bundle.getInt (Ljava/lang/String;)I
+    PUTFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.f : I
+   L4
+    LINENUMBER 85 L4
+    GETSTATIC com/xes/chinese/library/f/f.a : Ljava/util/List;
+    INVOKEINTERFACE java/util/List.size ()I
+    ALOAD 0
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.f : I
+    IF_ICMPLE L5
+   L6
+    LINENUMBER 86 L6
+    ALOAD 0
+    GETSTATIC com/xes/chinese/library/f/f.a : Ljava/util/List;
+    ALOAD 0
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.f : I
+    INVOKEINTERFACE java/util/List.get (I)Ljava/lang/Object;
+    CHECKCAST com/xes/chinese/library/bean/LibQuestionBean
+    PUTFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.g : Lcom/xes/chinese/library/bean/LibQuestionBean;
+   L7
+    LINENUMBER 87 L7
+    ALOAD 0
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.g : Lcom/xes/chinese/library/bean/LibQuestionBean;
+    IFNONNULL L8
+   L9
+    LINENUMBER 88 L9
+    ALOAD 0
+    ALOAD 3
+    ALOAD 4
+    INVOKESTATIC com/sensorsdata/analytics/android/sdk/SensorsDataAutoTrackHelper.onFragmentViewCreated (Ljava/lang/Object;Landroid/view/View;Landroid/os/Bundle;)V
+    RETURN
+   L8
+    LINENUMBER 91 L8
+    GETSTATIC com/xes/chinese/library/f/f.b : Ljava/util/List;
+    INVOKEINTERFACE java/util/List.size ()I
+    ALOAD 0
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.f : I
+    IF_ICMPLE L10
+   L11
+    LINENUMBER 92 L11
+    ALOAD 0
+    GETSTATIC com/xes/chinese/library/f/f.b : Ljava/util/List;
+    ALOAD 0
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.f : I
+    INVOKEINTERFACE java/util/List.get (I)Ljava/lang/Object;
+    CHECKCAST java/lang/String
+    PUTFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.h : Ljava/lang/String;
+   L10
+    LINENUMBER 94 L10
+    ALOAD 0
+    ALOAD 0
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.g : Lcom/xes/chinese/library/bean/LibQuestionBean;
+    INVOKEVIRTUAL com/xes/chinese/library/bean/LibQuestionBean.getQstJson ()Lcom/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson;
+    PUTFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.i : Lcom/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson;
+   L12
+    LINENUMBER 96 L12
+    ALOAD 0
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.e : I
+    IFNE L13
+   L14
+    LINENUMBER 97 L14
+    ALOAD 0
+    NEW java/util/concurrent/ThreadPoolExecutor
+    DUP
+    ICONST_1
+    ICONST_1
+    LDC 1500
+    GETSTATIC java/util/concurrent/TimeUnit.MILLISECONDS : Ljava/util/concurrent/TimeUnit;
+    NEW java/util/concurrent/ArrayBlockingQueue
+    DUP
+    ICONST_2
+    INVOKESPECIAL java/util/concurrent/ArrayBlockingQueue.<init> (I)V
+    NEW java/util/concurrent/ThreadPoolExecutor$DiscardOldestPolicy
+    DUP
+    INVOKESPECIAL java/util/concurrent/ThreadPoolExecutor$DiscardOldestPolicy.<init> ()V
+    INVOKESPECIAL java/util/concurrent/ThreadPoolExecutor.<init> (IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/RejectedExecutionHandler;)V
+    PUTFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.j : Ljava/util/concurrent/ThreadPoolExecutor;
+   L15
+    LINENUMBER 98 L15
+    ALOAD 0
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.j : Ljava/util/concurrent/ThreadPoolExecutor;
+    ICONST_1
+    INVOKEVIRTUAL java/util/concurrent/ThreadPoolExecutor.allowCoreThreadTimeOut (Z)V
+   L13
+    LINENUMBER 100 L13
+    ALOAD 0
+    DUP
+   L16
+    LINENUMBER 1109 L16
+    ASTORE 1
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.b : Lcom/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView;
+    LDC 16777215
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView.setBackgroundColor (I)V
+   L17
+    LINENUMBER 1110 L17
+    ALOAD 1
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.b : Lcom/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView;
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView.getBackground ()Landroid/graphics/drawable/Drawable;
+    ICONST_0
+    INVOKEVIRTUAL android/graphics/drawable/Drawable.setAlpha (I)V
+   L18
+    LINENUMBER 1142 L18
+    INVOKESTATIC com/xes/questiontype/utils/JsAndNativeUtils.getInstance ()Lcom/xes/questiontype/utils/JsAndNativeUtils;
+    INVOKEVIRTUAL com/xes/questiontype/utils/JsAndNativeUtils.getTIKUPath ()Ljava/lang/String;
+   L19
+    LINENUMBER 1112 L19
+    ASTORE 2
+   L20
+    LINENUMBER 1113 L20
+    ALOAD 1
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.b : Lcom/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView;
+    NEW java/lang/StringBuilder
+    DUP
+    LDC "file://"
+    INVOKESPECIAL java/lang/StringBuilder.<init> (Ljava/lang/String;)V
+    ALOAD 2
+    INVOKEVIRTUAL java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;
+    INVOKEVIRTUAL java/lang/StringBuilder.toString ()Ljava/lang/String;
+    ALOAD 1
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.h : Ljava/lang/String;
+    LDC "text/html"
+    LDC "utf-8"
+    ACONST_NULL
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView.loadDataWithBaseURL (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+   L21
+    LINENUMBER 1115 L21
+    ALOAD 1
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.b : Lcom/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView;
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView.getSettings ()Landroid/webkit/WebSettings;
+    DUP
+   L22
+    LINENUMBER 1116 L22
+    ASTORE 2
+    ICONST_1
+    INVOKEVIRTUAL android/webkit/WebSettings.setUseWideViewPort (Z)V
+   L23
+    LINENUMBER 1117 L23
+    ALOAD 2
+    ICONST_1
+    INVOKEVIRTUAL android/webkit/WebSettings.setLoadWithOverviewMode (Z)V
+   L24
+    LINENUMBER 1118 L24
+    ALOAD 2
+    ICONST_1
+    INVOKEVIRTUAL android/webkit/WebSettings.setAllowFileAccess (Z)V
+   L25
+    LINENUMBER 1119 L25
+    ALOAD 2
+    ICONST_0
+    INVOKEVIRTUAL android/webkit/WebSettings.setSupportZoom (Z)V
+   L26
+    LINENUMBER 1120 L26
+    ALOAD 2
+    ICONST_0
+    INVOKEVIRTUAL android/webkit/WebSettings.setDisplayZoomControls (Z)V
+   L27
+    LINENUMBER 1121 L27
+    ALOAD 2
+    ICONST_0
+    INVOKEVIRTUAL android/webkit/WebSettings.setBuiltInZoomControls (Z)V
+   L28
+    LINENUMBER 1122 L28
+    ALOAD 2
+    ICONST_2
+    INVOKEVIRTUAL android/webkit/WebSettings.setCacheMode (I)V
+   L29
+    LINENUMBER 1123 L29
+    ALOAD 2
+    ICONST_1
+    INVOKEVIRTUAL android/webkit/WebSettings.setDomStorageEnabled (Z)V
+   L30
+    LINENUMBER 1124 L30
+    GETSTATIC android/os/Build$VERSION.SDK_INT : I
+    BIPUSH 19
+    IF_ICMPLT L31
+   L32
+    LINENUMBER 1125 L32
+    ALOAD 1
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.b : Lcom/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView;
+    ICONST_1
+    ACONST_NULL
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView.setLayerType (ILandroid/graphics/Paint;)V
+   L31
+    LINENUMBER 1127 L31
+    ALOAD 1
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.b : Lcom/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView;
+    NEW com/xes/chinese/library/fragment/ChsLibWebviewFragment$1
+    DUP
+    ALOAD 1
+    INVOKESPECIAL com/xes/chinese/library/fragment/ChsLibWebviewFragment$1.<init> (Lcom/xes/chinese/library/fragment/ChsLibWebviewFragment;)V
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView.setWebChromeClient (Landroid/webkit/WebChromeClient;)V
+   L33
+    LINENUMBER 1137 L33
+    ALOAD 1
+    ASTORE 2
+   L34
+    LINENUMBER 1203 L34
+    INVOKESTATIC com/xes/questiontype/utils/JsAndNativeUtils.getInstance ()Lcom/xes/questiontype/utils/JsAndNativeUtils;
+    ALOAD 2
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.b : Lcom/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView;
+    ALOAD 2
+    INVOKEVIRTUAL com/xes/questiontype/utils/JsAndNativeUtils.registerUserOperationCallback (Lcom/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView;Lcom/xes/questiontype/WebToNativeCallback;)V
+   L35
+    LINENUMBER 1205 L35
+    INVOKESTATIC com/xes/questiontype/utils/JsAndNativeUtils.getInstance ()Lcom/xes/questiontype/utils/JsAndNativeUtils;
+    ALOAD 2
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.b : Lcom/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView;
+    ALOAD 2
+    INVOKEVIRTUAL com/xes/questiontype/utils/JsAndNativeUtils.registerImageViewerCallback (Lcom/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView;Lcom/xes/questiontype/WebToNativeCallback;)V
+   L36
+    LINENUMBER 1138 L36
+    ALOAD 1
+    DUP
+   L37
+    LINENUMBER 2146 L37
+    ASTORE 2
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.e : I
+    LOOKUPSWITCH
+      0: L38
+      1: L39
+      default: L5
+   L38
+    LINENUMBER 2148 L38
+    ALOAD 2
+    DUP
+   L40
+    LINENUMBER 2163 L40
+    ASTORE 1
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.a : Ljava/util/Map;
+    INVOKEINTERFACE java/util/Map.size ()I
+    IFLE L41
+   L42
+    LINENUMBER 2164 L42
+    ALOAD 1
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.a : Ljava/util/Map;
+    INVOKEINTERFACE java/util/Map.values ()Ljava/util/Collection;
+    ASTORE 2
+   L43
+    LINENUMBER 2165 L43
+    INVOKESTATIC com/xes/questiontype/utils/JsAndNativeUtils.getInstance ()Lcom/xes/questiontype/utils/JsAndNativeUtils;
+    ALOAD 1
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.b : Lcom/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView;
+    ACONST_NULL
+    ALOAD 2
+    INVOKEVIRTUAL com/xes/questiontype/utils/JsAndNativeUtils.callObjectiveSetUserAnswer (Lcom/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView;Ljava/util/List;Ljava/util/Collection;)Ljava/lang/String;
+    POP
+   L41
+    LINENUMBER 2149 L41
+    ALOAD 0
+    ALOAD 3
+    ALOAD 4
+    INVOKESTATIC com/sensorsdata/analytics/android/sdk/SensorsDataAutoTrackHelper.onFragmentViewCreated (Ljava/lang/Object;Landroid/view/View;Landroid/os/Bundle;)V
+    RETURN
+   L39
+    LINENUMBER 2152 L39
+    ALOAD 2
+    ASTORE 1
+   L44
+    LINENUMBER 2170 L44
+    NEW java/util/ArrayList
+    DUP
+    INVOKESPECIAL java/util/ArrayList.<init> ()V
+    ASTORE 2
+   L45
+    LINENUMBER 2171 L45
+    ALOAD 1
+    ALOAD 1
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.i : Lcom/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson;
+    ALOAD 2
+    INVOKESPECIAL com/xes/chinese/library/fragment/ChsLibWebviewFragment.a (Lcom/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson;Ljava/util/List;)V
+   L46
+    LINENUMBER 2172 L46
+    INVOKESTATIC com/xes/questiontype/utils/JsAndNativeUtils.getInstance ()Lcom/xes/questiontype/utils/JsAndNativeUtils;
+    ALOAD 1
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.b : Lcom/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView;
+    LDC "0"
+    INVOKEVIRTUAL com/xes/questiontype/utils/JsAndNativeUtils.callToggleGlobalInteraction (Lcom/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView;Ljava/lang/String;)V
+   L47
+    LINENUMBER 2173 L47
+    INVOKESTATIC com/xes/questiontype/utils/JsAndNativeUtils.getInstance ()Lcom/xes/questiontype/utils/JsAndNativeUtils;
+    ALOAD 1
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.b : Lcom/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView;
+    ALOAD 2
+    INVOKEVIRTUAL com/xes/questiontype/utils/JsAndNativeUtils.callToggleAnalyze (Lcom/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView;Ljava/util/List;)V
+   L5
+    LINENUMBER 102 L5
+    ALOAD 0
+    ALOAD 3
+    ALOAD 4
+    INVOKESTATIC com/sensorsdata/analytics/android/sdk/SensorsDataAutoTrackHelper.onFragmentViewCreated (Ljava/lang/Object;Landroid/view/View;Landroid/os/Bundle;)V
+    RETURN
+    MAXSTACK = 11
+    MAXLOCALS = 5
+
+  // access flags 0x2
+  // signature (Lcom/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson;Ljava/util/List<Lcom/xes/questiontype/bean/ToggleAnalyze;>;)V
+  // declaration: void a(com.xes.cloudlearning.bcmpt.bean.AnswerQuestionJson, java.util.List<com.xes.questiontype.bean.ToggleAnalyze>)
+  private a(Lcom/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson;Ljava/util/List;)V
+   L0
+    LINENUMBER 177 L0
+    ALOAD 1
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson.getChildList ()Ljava/util/List;
+    IFNULL L1
+    ALOAD 1
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson.getChildList ()Ljava/util/List;
+    INVOKEINTERFACE java/util/List.size ()I
+    IFLE L1
+   L2
+    LINENUMBER 178 L2
+    ALOAD 1
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson.getChildList ()Ljava/util/List;
+    INVOKEINTERFACE java/util/List.iterator ()Ljava/util/Iterator;
+    ASTORE 1
+   L3
+    ALOAD 1
+    INVOKEINTERFACE java/util/Iterator.hasNext ()Z
+    IFEQ L4
+    ALOAD 1
+    INVOKEINTERFACE java/util/Iterator.next ()Ljava/lang/Object;
+    CHECKCAST com/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson
+    ASTORE 3
+   L5
+    LINENUMBER 179 L5
+    ALOAD 0
+    ALOAD 3
+    ALOAD 2
+    INVOKESPECIAL com/xes/chinese/library/fragment/ChsLibWebviewFragment.a (Lcom/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson;Ljava/util/List;)V
+   L6
+    LINENUMBER 180 L6
+    GOTO L3
+   L4
+    RETURN
+   L1
+    LINENUMBER 182 L1
+    NEW com/xes/questiontype/bean/ToggleAnalyze
+    DUP
+    ALOAD 1
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson.getQueId ()Ljava/lang/String;
+    ICONST_1
+    ALOAD 1
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson.getAnalysis ()Ljava/lang/Object;
+    INVOKESPECIAL com/xes/questiontype/bean/ToggleAnalyze.<init> (Ljava/lang/String;ILjava/lang/Object;)V
+    ASTORE 1
+   L7
+    LINENUMBER 183 L7
+    ALOAD 2
+    ALOAD 1
+    INVOKEINTERFACE java/util/List.add (Ljava/lang/Object;)Z
+    POP
+   L8
+    LINENUMBER 185 L8
+    RETURN
+    MAXSTACK = 5
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public onDestroyView()V
+   L0
+    LINENUMBER 189 L0
+    ALOAD 0
+    INVOKESPECIAL android/support/v4/app/Fragment.onDestroyView ()V
+   L1
+    LINENUMBER 190 L1
+    ALOAD 0
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.b : Lcom/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView;
+    IFNULL L2
+   L3
+    LINENUMBER 191 L3
+    ALOAD 0
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.b : Lcom/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView;
+    ICONST_1
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView.clearCache (Z)V
+   L4
+    LINENUMBER 192 L4
+    ALOAD 0
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.b : Lcom/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView;
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView.clearFormData ()V
+   L5
+    LINENUMBER 193 L5
+    ALOAD 0
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.b : Lcom/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView;
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView.clearHistory ()V
+   L6
+    LINENUMBER 194 L6
+    ALOAD 0
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.b : Lcom/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView;
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView.getParent ()Landroid/view/ViewParent;
+    CHECKCAST android/view/ViewGroup
+   L7
+    LINENUMBER 195 L7
+    ALOAD 0
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.b : Lcom/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView;
+    INVOKEVIRTUAL android/view/ViewGroup.removeView (Landroid/view/View;)V
+   L8
+    LINENUMBER 196 L8
+    ALOAD 0
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.b : Lcom/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView;
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView.removeAllViews ()V
+   L9
+    LINENUMBER 197 L9
+    ALOAD 0
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.b : Lcom/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView;
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/views/bridgeview/BridgeWebView.destroy ()V
+   L2
+    LINENUMBER 199 L2
+    RETURN
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public userOperationCallback(Lcom/xes/cloudlearning/bcmpt/bean/UserAnswer;)V
+   L0
+    LINENUMBER 216 L0
+    ALOAD 0
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.a : Ljava/util/Map;
+    ALOAD 1
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/bean/UserAnswer.getQueId ()Ljava/lang/String;
+    ALOAD 1
+    INVOKEINTERFACE java/util/Map.put (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    POP
+   L1
+    LINENUMBER 218 L1
+    INVOKESTATIC org/greenrobot/eventbus/EventBus.getDefault ()Lorg/greenrobot/eventbus/EventBus;
+    NEW com/xes/cloudlearning/answer/bean/UserAnswerPosition
+    DUP
+    ALOAD 0
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.f : I
+    INVOKESPECIAL com/xes/cloudlearning/answer/bean/UserAnswerPosition.<init> (I)V
+    INVOKEVIRTUAL org/greenrobot/eventbus/EventBus.post (Ljava/lang/Object;)V
+   L2
+    LINENUMBER 220 L2
+    ALOAD 0
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.j : Ljava/util/concurrent/ThreadPoolExecutor;
+    IFNULL L3
+   L4
+    LINENUMBER 221 L4
+    ALOAD 0
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.j : Ljava/util/concurrent/ThreadPoolExecutor;
+    NEW com/xes/chinese/library/fragment/ChsLibWebviewFragment$2
+    DUP
+    ALOAD 0
+    INVOKESPECIAL com/xes/chinese/library/fragment/ChsLibWebviewFragment$2.<init> (Lcom/xes/chinese/library/fragment/ChsLibWebviewFragment;)V
+    INVOKEVIRTUAL java/util/concurrent/ThreadPoolExecutor.execute (Ljava/lang/Runnable;)V
+   L3
+    LINENUMBER 228 L3
+    RETURN
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public imageViewerCallback(Ljava/lang/String;)V
+   L0
+    LINENUMBER 233 L0
+    RETURN
+    MAXSTACK = 0
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public playAudioCallBack(Ljava/lang/String;)V
+   L0
+    LINENUMBER 238 L0
+    RETURN
+    MAXSTACK = 0
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public playVideoCallBack(Ljava/lang/String;)V
+   L0
+    LINENUMBER 243 L0
+    RETURN
+    MAXSTACK = 0
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getMoreImageCallBack(Lcom/xes/cloudlearning/bcmpt/views/bridgeview/CallBackFunction;)V
+   L0
+    LINENUMBER 248 L0
+    RETURN
+    MAXSTACK = 0
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public userCorrectFeedBackCallback(Lcom/xes/questiontype/bean/CorrectFeedBackCallbackBean;Lcom/xes/cloudlearning/bcmpt/views/bridgeview/CallBackFunction;)V
+   L0
+    LINENUMBER 253 L0
+    RETURN
+    MAXSTACK = 0
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public userFeedBackCallback(Lcom/xes/questiontype/bean/CorrectFeedBackCallbackBean;Lcom/xes/cloudlearning/bcmpt/views/bridgeview/CallBackFunction;)V
+   L0
+    LINENUMBER 258 L0
+    RETURN
+    MAXSTACK = 0
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  // signature (Ljava/util/List<Lcom/xes/cloudlearning/bcmpt/bean/JudgeResultBean;>;)V
+  // declaration: void judgeResultsCallBack(java.util.List<com.xes.cloudlearning.bcmpt.bean.JudgeResultBean>)
+  public judgeResultsCallBack(Ljava/util/List;)V
+   L0
+    LINENUMBER 267 L0
+    NEW com/xes/cloudlearning/bcmpt/bean/QuestionRightOrError
+    DUP
+    ALOAD 0
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.i : Lcom/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson;
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson.getQueId ()Ljava/lang/String;
+    INVOKESPECIAL com/xes/cloudlearning/bcmpt/bean/QuestionRightOrError.<init> (Ljava/lang/String;)V
+    ASTORE 2
+   L1
+    LINENUMBER 268 L1
+    ICONST_1
+    ISTORE 3
+   L2
+    LINENUMBER 269 L2
+    NEW java/util/HashMap
+    DUP
+    INVOKESPECIAL java/util/HashMap.<init> ()V
+    ASTORE 4
+   L3
+    LINENUMBER 270 L3
+    ALOAD 1
+    INVOKEINTERFACE java/util/List.iterator ()Ljava/util/Iterator;
+    ASTORE 5
+   L4
+    ALOAD 5
+    INVOKEINTERFACE java/util/Iterator.hasNext ()Z
+    IFEQ L5
+    ALOAD 5
+    INVOKEINTERFACE java/util/Iterator.next ()Ljava/lang/Object;
+    CHECKCAST com/xes/cloudlearning/bcmpt/bean/JudgeResultBean
+    ASTORE 6
+   L6
+    LINENUMBER 271 L6
+    ALOAD 4
+    ALOAD 6
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/bean/JudgeResultBean.getQueId ()Ljava/lang/String;
+    ALOAD 6
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/bean/JudgeResultBean.getJudge ()Ljava/util/List;
+    INVOKEINTERFACE java/util/Map.put (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    POP
+   L7
+    LINENUMBER 272 L7
+    GOTO L4
+   L5
+    LINENUMBER 273 L5
+    ALOAD 1
+    INVOKEINTERFACE java/util/List.iterator ()Ljava/util/Iterator;
+    ASTORE 5
+   L8
+    ALOAD 5
+    INVOKEINTERFACE java/util/Iterator.hasNext ()Z
+    IFEQ L9
+    ALOAD 5
+    INVOKEINTERFACE java/util/Iterator.next ()Ljava/lang/Object;
+    CHECKCAST com/xes/cloudlearning/bcmpt/bean/JudgeResultBean
+   L10
+    LINENUMBER 274 L10
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/bean/JudgeResultBean.getJudge ()Ljava/util/List;
+    INVOKEINTERFACE java/util/List.iterator ()Ljava/util/Iterator;
+    ASTORE 1
+   L11
+    ALOAD 1
+    INVOKEINTERFACE java/util/Iterator.hasNext ()Z
+    IFEQ L12
+    ALOAD 1
+    INVOKEINTERFACE java/util/Iterator.next ()Ljava/lang/Object;
+    CHECKCAST java/lang/Integer
+    DUP
+   L13
+    LINENUMBER 275 L13
+    ASTORE 6
+    INVOKEVIRTUAL java/lang/Integer.intValue ()I
+    IFEQ L14
+    ALOAD 6
+    INVOKEVIRTUAL java/lang/Integer.intValue ()I
+    BIPUSH -2
+    IF_ICMPNE L15
+   L14
+    LINENUMBER 276 L14
+    ICONST_2
+    ISTORE 3
+   L16
+    LINENUMBER 277 L16
+    GOTO L8
+   L15
+    LINENUMBER 279 L15
+    GOTO L11
+   L12
+    LINENUMBER 280 L12
+    GOTO L8
+   L9
+    LINENUMBER 281 L9
+    ALOAD 2
+    ALOAD 4
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/bean/QuestionRightOrError.setCompositeJudge (Ljava/util/Map;)V
+   L17
+    LINENUMBER 282 L17
+    ALOAD 4
+    INVOKEINTERFACE java/util/Map.size ()I
+    IFLE L18
+   L19
+    LINENUMBER 283 L19
+    ALOAD 2
+    ILOAD 3
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/bean/QuestionRightOrError.setState (I)V
+    GOTO L20
+   L18
+    LINENUMBER 285 L18
+    ALOAD 2
+    ICONST_2
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/bean/QuestionRightOrError.setState (I)V
+   L20
+    LINENUMBER 287 L20
+    ALOAD 2
+    ALOAD 0
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.g : Lcom/xes/chinese/library/bean/LibQuestionBean;
+    INVOKEVIRTUAL com/xes/chinese/library/bean/LibQuestionBean.getQstId ()Ljava/lang/String;
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/bean/QuestionRightOrError.setLevelId (Ljava/lang/String;)V
+   L21
+    LINENUMBER 288 L21
+    INVOKESTATIC org/greenrobot/eventbus/EventBus.getDefault ()Lorg/greenrobot/eventbus/EventBus;
+    ALOAD 2
+    INVOKEVIRTUAL org/greenrobot/eventbus/EventBus.post (Ljava/lang/Object;)V
+   L22
+    LINENUMBER 289 L22
+    RETURN
+    MAXSTACK = 3
+    MAXLOCALS = 7
+
+  // access flags 0x1
+  public interactiveClockSwiperEvent(Ljava/lang/String;)V
+   L0
+    LINENUMBER 294 L0
+    RETURN
+    MAXSTACK = 0
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public interactiveClockPostData(Ljava/lang/String;)V
+   L0
+    LINENUMBER 299 L0
+    RETURN
+    MAXSTACK = 0
+    MAXLOCALS = 2
+
+  // access flags 0x11
+  public final a()V
+   L0
+    LINENUMBER 306 L0
+    NEW java/util/ArrayList
+    DUP
+    INVOKESPECIAL java/util/ArrayList.<init> ()V
+    ASTORE 1
+   L1
+    LINENUMBER 307 L1
+    ALOAD 0
+    ALOAD 0
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.i : Lcom/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson;
+    ALOAD 1
+    INVOKESPECIAL com/xes/chinese/library/fragment/ChsLibWebviewFragment.b (Lcom/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson;Ljava/util/List;)V
+   L2
+    LINENUMBER 308 L2
+    ALOAD 0
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.i : Lcom/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson;
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson.getLogicQuesTypeId ()Ljava/lang/String;
+    LDC "9"
+    INVOKEVIRTUAL java/lang/String.equals (Ljava/lang/Object;)Z
+    IFEQ L3
+   L4
+    LINENUMBER 309 L4
+    INVOKESTATIC com/xes/questiontype/utils/JsAndNativeUtils.getInstance ()Lcom/xes/questiontype/utils/JsAndNativeUtils;
+    LDC "judgeAnswerComposite"
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL com/xes/questiontype/utils/JsAndNativeUtils.loadJudgeJsForJ2V8 (Ljava/lang/String;Lcom/xes/questiontype/JudgeCallBack;Ljava/util/List;)Ljava/util/List;
+    POP
+    RETURN
+   L3
+    LINENUMBER 311 L3
+    INVOKESTATIC com/xes/questiontype/utils/JsAndNativeUtils.getInstance ()Lcom/xes/questiontype/utils/JsAndNativeUtils;
+    LDC "judgeAnswer"
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL com/xes/questiontype/utils/JsAndNativeUtils.loadJudgeJsForJ2V8 (Ljava/lang/String;Lcom/xes/questiontype/JudgeCallBack;Ljava/util/List;)Ljava/util/List;
+    POP
+   L5
+    LINENUMBER 313 L5
+    RETURN
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x2
+  // signature (Lcom/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson;Ljava/util/List<Lcom/xes/cloudlearning/bcmpt/bean/JudgeQuestionValve;>;)V
+  // declaration: void b(com.xes.cloudlearning.bcmpt.bean.AnswerQuestionJson, java.util.List<com.xes.cloudlearning.bcmpt.bean.JudgeQuestionValve>)
+  private b(Lcom/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson;Ljava/util/List;)V
+   L0
+    LINENUMBER 322 L0
+    ALOAD 1
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson.getChildList ()Ljava/util/List;
+    IFNULL L1
+    ALOAD 1
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson.getChildList ()Ljava/util/List;
+    INVOKEINTERFACE java/util/List.size ()I
+    IFLE L1
+   L2
+    LINENUMBER 323 L2
+    ALOAD 1
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson.getChildList ()Ljava/util/List;
+    INVOKEINTERFACE java/util/List.iterator ()Ljava/util/Iterator;
+    ASTORE 3
+   L3
+    ALOAD 3
+    INVOKEINTERFACE java/util/Iterator.hasNext ()Z
+    IFEQ L4
+    ALOAD 3
+    INVOKEINTERFACE java/util/Iterator.next ()Ljava/lang/Object;
+    CHECKCAST com/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson
+    ASTORE 4
+   L5
+    LINENUMBER 324 L5
+    ALOAD 0
+    ALOAD 4
+    ALOAD 2
+    INVOKESPECIAL com/xes/chinese/library/fragment/ChsLibWebviewFragment.b (Lcom/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson;Ljava/util/List;)V
+   L6
+    LINENUMBER 325 L6
+    GOTO L3
+   L4
+    RETURN
+   L1
+    LINENUMBER 327 L1
+    ALOAD 1
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson.getNormalAnswer ()Ljava/lang/Object;
+    IFNULL L7
+    ALOAD 1
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson.getNormalAnswer ()Ljava/lang/Object;
+    GOTO L8
+   L7
+    ALOAD 1
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson.getAnswer ()Ljava/lang/Object;
+   L8
+    ASTORE 3
+   L9
+    LINENUMBER 328 L9
+    ALOAD 0
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.a : Ljava/util/Map;
+    ALOAD 1
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson.getQueId ()Ljava/lang/String;
+    INVOKEINTERFACE java/util/Map.containsKey (Ljava/lang/Object;)Z
+    IFEQ L10
+   L11
+    LINENUMBER 329 L11
+    ALOAD 0
+    GETFIELD com/xes/chinese/library/fragment/ChsLibWebviewFragment.a : Ljava/util/Map;
+    ALOAD 1
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson.getQueId ()Ljava/lang/String;
+    INVOKEINTERFACE java/util/Map.get (Ljava/lang/Object;)Ljava/lang/Object;
+    CHECKCAST com/xes/cloudlearning/bcmpt/bean/UserAnswer
+    ASTORE 4
+   L12
+    LINENUMBER 330 L12
+    NEW com/xes/cloudlearning/bcmpt/bean/JudgeQuestionValve
+    DUP
+    ALOAD 1
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson.getGradeGroupId ()Ljava/lang/String;
+    INVOKESTATIC java/lang/Integer.valueOf (Ljava/lang/String;)Ljava/lang/Integer;
+    INVOKEVIRTUAL java/lang/Integer.intValue ()I
+    ALOAD 1
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson.getQueId ()Ljava/lang/String;
+    ALOAD 1
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson.getBlankAnswer ()Ljava/lang/Object;
+    ALOAD 1
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson.getLogicQuesTypeId ()Ljava/lang/String;
+    INVOKESTATIC java/lang/Integer.valueOf (Ljava/lang/String;)Ljava/lang/Integer;
+    INVOKEVIRTUAL java/lang/Integer.intValue ()I
+    ALOAD 1
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson.getSubjectId ()Ljava/lang/String;
+    INVOKESTATIC java/lang/Integer.valueOf (Ljava/lang/String;)Ljava/lang/Integer;
+    INVOKEVIRTUAL java/lang/Integer.intValue ()I
+    ALOAD 3
+    ALOAD 4
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/bean/UserAnswer.getData ()Ljava/util/List;
+    INVOKESPECIAL com/xes/cloudlearning/bcmpt/bean/JudgeQuestionValve.<init> (ILjava/lang/String;Ljava/lang/Object;IILjava/lang/Object;Ljava/util/List;)V
+    ASTORE 1
+   L13
+    LINENUMBER 331 L13
+    ALOAD 2
+    ALOAD 1
+    INVOKEINTERFACE java/util/List.add (Ljava/lang/Object;)Z
+    POP
+   L14
+    LINENUMBER 332 L14
+    RETURN
+   L10
+    LINENUMBER 333 L10
+    NEW com/xes/cloudlearning/bcmpt/bean/JudgeQuestionValve
+    DUP
+    ALOAD 1
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson.getGradeGroupId ()Ljava/lang/String;
+    INVOKESTATIC java/lang/Integer.valueOf (Ljava/lang/String;)Ljava/lang/Integer;
+    INVOKEVIRTUAL java/lang/Integer.intValue ()I
+    ALOAD 1
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson.getQueId ()Ljava/lang/String;
+    ALOAD 1
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson.getBlankAnswer ()Ljava/lang/Object;
+    ALOAD 1
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson.getLogicQuesTypeId ()Ljava/lang/String;
+    INVOKESTATIC java/lang/Integer.valueOf (Ljava/lang/String;)Ljava/lang/Integer;
+    INVOKEVIRTUAL java/lang/Integer.intValue ()I
+    ALOAD 1
+    INVOKEVIRTUAL com/xes/cloudlearning/bcmpt/bean/AnswerQuestionJson.getSubjectId ()Ljava/lang/String;
+    INVOKESTATIC java/lang/Integer.valueOf (Ljava/lang/String;)Ljava/lang/Integer;
+    INVOKEVIRTUAL java/lang/Integer.intValue ()I
+    ALOAD 3
+    NEW java/util/ArrayList
+    DUP
+    INVOKESPECIAL java/util/ArrayList.<init> ()V
+    INVOKESPECIAL com/xes/cloudlearning/bcmpt/bean/JudgeQuestionValve.<init> (ILjava/lang/String;Ljava/lang/Object;IILjava/lang/Object;Ljava/util/List;)V
+    ASTORE 4
+   L15
+    LINENUMBER 334 L15
+    ALOAD 2
+    ALOAD 4
+    INVOKEINTERFACE java/util/List.add (Ljava/lang/Object;)Z
+    POP
+   L16
+    LINENUMBER 337 L16
+    RETURN
+    MAXSTACK = 10
+    MAXLOCALS = 5
+
+  // access flags 0x1
+  public onHiddenChanged(Z)V
+  @Lcom/sensorsdata/analytics/android/sdk/SensorsDataInstrumented;() // invisible
+    ALOAD 0
+    ILOAD 1
+    INVOKESPECIAL android/support/v4/app/Fragment.onHiddenChanged (Z)V
+    ALOAD 0
+    ILOAD 1
+    INVOKESTATIC com/sensorsdata/analytics/android/sdk/SensorsDataAutoTrackHelper.trackOnHiddenChanged (Ljava/lang/Object;Z)V
+    RETURN
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public onResume()V
+  @Lcom/sensorsdata/analytics/android/sdk/SensorsDataInstrumented;() // invisible
+    ALOAD 0
+    INVOKESPECIAL android/support/v4/app/Fragment.onResume ()V
+    ALOAD 0
+    INVOKESTATIC com/sensorsdata/analytics/android/sdk/SensorsDataAutoTrackHelper.trackFragmentResume (Ljava/lang/Object;)V
+    RETURN
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public setUserVisibleHint(Z)V
+  @Lcom/sensorsdata/analytics/android/sdk/SensorsDataInstrumented;() // invisible
+    ALOAD 0
+    ILOAD 1
+    INVOKESPECIAL android/support/v4/app/Fragment.setUserVisibleHint (Z)V
+    ALOAD 0
+    ILOAD 1
+    INVOKESTATIC com/sensorsdata/analytics/android/sdk/SensorsDataAutoTrackHelper.trackFragmentSetUserVisibleHint (Ljava/lang/Object;Z)V
+    RETURN
+    MAXSTACK = 2
+    MAXLOCALS = 2
+}
