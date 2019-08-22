@@ -7,7 +7,7 @@ buildscript {
         google()
         jcenter()
         maven {
-            url uri('/Users/jackyren/Documents/work/code/sa-sdk-android-plugin2/repo')
+            url uri('/Users/jackyren/Documents/work/gitlab/sa-sdk-android-plugin2/repo')
         }
     }
     dependencies {

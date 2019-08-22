@@ -7,6 +7,7 @@ import android.app.Application;
 
 import android.content.Context;
 //import android.support.multidex.MultiDex;
+import com.sensorsdata.analytics.android.sdk.SAConfigOptions;
 import com.sensorsdata.analytics.android.sdk.SensorsDataAPI;
 
 import javax.net.ssl.SSLContext;
@@ -58,7 +59,7 @@ public class MyApplication extends Application {
     /**
      * 初始化 Sensors Analytics SDK
      */
-    private void initSensorsDataAPI() {
+   /* private void initSensorsDataAPI() {
         SensorsDataAPI.sharedInstance(this, SA_SERVER_URL, SensorsDataAPI.DebugMode.DEBUG_AND_TRACK);                     // Debug 模式选项
         // 打开自动采集, 并指定追踪哪些 AutoTrack 事件
         List<SensorsDataAPI.AutoTrackEventType> eventTypeList = new ArrayList<SensorsDataAPI.AutoTrackEventType>();
@@ -80,6 +81,27 @@ public class MyApplication extends Application {
         //SSLSocketFactory socketFactory = bks(this);
         //SocketFactory socketFactory = bks(this);
         //SensorsDataAPI.sharedInstance().setSSLSocketFactory(socketFactory);
+    }*/
+
+    /**
+     * 初始化 Sensors Analytics SDK
+     */
+    private void initSensorsDataAPI() {
+        SensorsDataAPI.sharedInstance(this, new SAConfigOptions(SA_SERVER_URL));
+        // 打开自动采集, 并指定追踪哪些 AutoTrack 事件
+        List<SensorsDataAPI.AutoTrackEventType> eventTypeList = new ArrayList<>();
+        // $AppStart
+        eventTypeList.add(SensorsDataAPI.AutoTrackEventType.APP_START);
+        // $AppEnd
+        eventTypeList.add(SensorsDataAPI.AutoTrackEventType.APP_END);
+        // $AppViewScreen
+        eventTypeList.add(SensorsDataAPI.AutoTrackEventType.APP_VIEW_SCREEN);
+        // $AppClick
+        eventTypeList.add(SensorsDataAPI.AutoTrackEventType.APP_CLICK);
+        SensorsDataAPI.sharedInstance(this).enableAutoTrack(eventTypeList);
+        SensorsDataAPI.sharedInstance(this).trackFragmentAppViewScreen();
+        SensorsDataAPI.sharedInstance(this).trackAppCrash();
+        SensorsDataAPI.sharedInstance(this).enableLog(true);
     }
 
     public SSLSocketFactory ca(Context inputContext) {
