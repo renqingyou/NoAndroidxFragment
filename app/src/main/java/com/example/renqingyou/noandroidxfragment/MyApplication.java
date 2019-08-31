@@ -28,7 +28,7 @@ public class MyApplication extends Application {
     /**
      * Sensors Analytics 采集数据的地址
      */
-    private final static String SA_SERVER_URL = "http://sdk-test.datasink.sensorsdata.cn/sa?project=renqingyou&token=95c73ae661f85aa0";
+    private final static String SA_SERVER_URL = "http://10.42.23.127:8106/sa?project=default";
 
     /**
      * Sensors Analytics 配置分发的地址
