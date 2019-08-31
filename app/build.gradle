@@ -88,7 +88,7 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:28.0.0'
 
     //implementation(name: 'SensorsAnalyticsSDK-release', ext: 'aar')
-    implementation 'com.sensorsdata.analytics.android:SensorsAnalyticsSDK:3.2.2'
+    implementation 'com.sensorsdata.analytics.android:SensorsAnalyticsSDK:3.2.4'
 
     //debugImplementation(name:'SensorsAnalyticsSDK-debug', ext:'aar')
 
@@ -126,15 +126,14 @@ dependencies {
 
     //implementation files('libs/15.jar')
 
-    //implementation files('libs/vds-gradle-plugin-autotrack-2.7.8.jar')
+    implementation files('libs/vds-gradle-plugin-autotrack-2.8.0.jar')
 
     //implementation files('libs/classes.jar')
 
     //implementation files('libs/1.jar')
 
     //implementation files('libs/moduleOne.jar')
-    implementation files('libs/Samsung_Fingerprint_Pass-v1.2.2.jar')
-    implementation files('libs/Samsung_Fingerprint_Sdk-v1.0.0.jar')
+    implementation 'com.yanzhenjie.permission:support:2.0.1'
 }
 
 

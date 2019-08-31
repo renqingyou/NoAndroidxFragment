@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         View view1 = new View(this);
 
         setToolbar();
-        //oolbar.setOnMenuItemClickListener(menuItem -> false);
+        //Toolbar.setOnMenuItemClickListener(menuItem -> false);
 
         ListView listView = new ListView(this);
         listView.setOnItemClickListener((parent, view, position, id) -> {
