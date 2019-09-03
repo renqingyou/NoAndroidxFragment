@@ -100,6 +100,8 @@ public class MyApplication extends Application {
         eventTypeList.add(SensorsDataAPI.AutoTrackEventType.APP_CLICK);
         SensorsDataAPI.sharedInstance(this).enableAutoTrack(eventTypeList);
         SensorsDataAPI.sharedInstance(this).trackFragmentAppViewScreen();
+        SensorsDataAPI.sharedInstance().enableHeatMap();
+        SensorsDataAPI.sharedInstance().enableVisualizedAutoTrack();
         SensorsDataAPI.sharedInstance(this).trackAppCrash();
         SensorsDataAPI.sharedInstance(this).enableLog(true);
     }
