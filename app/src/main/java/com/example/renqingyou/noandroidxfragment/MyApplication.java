@@ -101,6 +101,8 @@ public class MyApplication extends Application {
         SensorsDataAPI.sharedInstance(this).enableAutoTrack(eventTypeList);
         SensorsDataAPI.sharedInstance(this).trackFragmentAppViewScreen();
         SensorsDataAPI.sharedInstance(this).trackAppCrash();
+        SensorsDataAPI.sharedInstance(this).enableHeatMap();
+        SensorsDataAPI.sharedInstance(this).enableVisualizedAutoTrack();
         SensorsDataAPI.sharedInstance(this).enableLog(true);
     }
 

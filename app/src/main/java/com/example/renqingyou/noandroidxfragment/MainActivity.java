@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.PopupMenu;
 import android.widget.Toast;
 
 
@@ -67,6 +68,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        PopupMenu popupMenu = new PopupMenu(this,getWindow().getDecorView());
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                return false;
+            }
+        });
+        popupMenu.setOnMenuItemClickListener(item -> false);
+
+        android.support.v7.widget.PopupMenu popupMenu1 = new android.support.v7.widget.PopupMenu(this,getWindow().getDecorView());
+        popupMenu1.setOnMenuItemClickListener(new android.support.v7.widget.PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                return false;
+            }
+        });
+        popupMenu1.setOnMenuItemClickListener(menuItem -> false);
+
+
         Toast.makeText(this, a, Toast.LENGTH_SHORT).show();
         setContentView(R.layout.activity_main);
         ActionBar actionBar = getSupportActionBar();
