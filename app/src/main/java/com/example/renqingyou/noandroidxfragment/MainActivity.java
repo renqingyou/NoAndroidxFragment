@@ -2,14 +2,21 @@ package com.example.renqingyou.noandroidxfragment;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SwitchCompat;
+import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CompoundButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.sensorsdata.analytics.android.sdk.ScreenAutoTracker;
@@ -58,19 +65,32 @@ public class MainActivity extends AppCompatActivity implements ScreenAutoTracker
         });
         builder.show().setOwnerActivity(this);
     }
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("ActionBar Title");
-        android.support.v7.widget.Toolbar toolbar = new android.support.v7.widget.Toolbar(this);
-        toolbar.setOnMenuItemClickListener(new android.support.v7.widget.Toolbar.OnMenuItemClickListener() {
+        /*Toolbar toolbar = new Toolbar(this);
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
-            public boolean onMenuItemClick(MenuItem menuItem) {
+            public boolean onMenuItemClick(MenuItem item) {
                 return false;
             }
-        });
+        });*/
+        android.support.v7.widget.Toolbar toolbar =  findViewById(R.id.toolbar);
+
+
+
+        toolbar.setTitle("Title");
+        toolbar.setTitleTextColor(Color.YELLOW);
+        // 副标题
+        toolbar.setSubtitle("Sub title");
+        toolbar.setSubtitleTextColor(Color.parseColor("#80ff0000"));
+        //侧边栏的按钮
+        //取代原本的actionbar
+        setSupportActionBar(toolbar);
+
         toolbar.setOnMenuItemClickListener(menuItem -> false);
 
         findViewById(R.id.bt0).setOnClickListener(new View.OnClickListener() {
@@ -137,6 +157,18 @@ public class MainActivity extends AppCompatActivity implements ScreenAutoTracker
             }
         });
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.menu_main2, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return super.onOptionsItemSelected(item);
     }
 
     public void popDialog() {
