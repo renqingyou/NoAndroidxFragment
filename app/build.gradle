@@ -26,9 +26,6 @@ android {
         sdk {
             //disableIMEI = true
         }
-        check {
-            stringCheckSet = ['android.support.v24']
-        }
     }
 
     buildTypes {

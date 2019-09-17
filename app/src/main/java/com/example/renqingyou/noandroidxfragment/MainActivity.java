@@ -7,6 +7,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.PopupMenu;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
@@ -16,6 +17,7 @@ import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.Toast;
 
+import com.google.android.material.tabs.TabLayout;
 import com.sensorsdata.analytics.android.sdk.SensorsDataFragmentTitle;
 import com.sensorsdata.analytics.android.sdk.SensorsDataTrackEvent;
 
@@ -36,11 +38,41 @@ public class MainActivity extends AppCompatActivity {
         String b = "android.support.v7";
         String[] c = new String[]{"android.support.v13",""};
 
+        androidx.appcompat.widget.PopupMenu popupMenu = new PopupMenu(this,getWindow().getDecorView());
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                return false;
+            }
+        });
+
+        popupMenu.setOnMenuItemClickListener(item -> false);
+
+
         Toolbar toolbar = new Toolbar(this);
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 return false;
+            }
+        });
+
+
+        TabLayout tabLayout = new TabLayout(this);
+        tabLayout.addOnTabSelectedListener(new TabLayout.BaseOnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
             }
         });
 
