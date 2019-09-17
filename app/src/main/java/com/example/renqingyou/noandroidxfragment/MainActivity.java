@@ -7,6 +7,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SwitchCompat;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.Toast;
@@ -63,6 +64,15 @@ public class MainActivity extends AppCompatActivity implements ScreenAutoTracker
         setContentView(R.layout.activity_main);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("ActionBar Title");
+        android.support.v7.widget.Toolbar toolbar = new android.support.v7.widget.Toolbar(this);
+        toolbar.setOnMenuItemClickListener(new android.support.v7.widget.Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                return false;
+            }
+        });
+        toolbar.setOnMenuItemClickListener(menuItem -> false);
+
         findViewById(R.id.bt0).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
