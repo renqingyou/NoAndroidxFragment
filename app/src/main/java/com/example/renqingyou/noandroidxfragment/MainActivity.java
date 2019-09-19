@@ -1,5 +1,6 @@
 package com.example.renqingyou.noandroidxfragment;
 
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
@@ -28,6 +29,21 @@ import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity implements ScreenAutoTracker {
 
+    public void testOnMultiChoiceClick(){
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+        boolean[] booleans = new boolean[2];
+        alertDialog.setMultiChoiceItems(0, booleans, new DialogInterface.OnMultiChoiceClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which, boolean isChecked) {
+
+            }
+        });
+
+        alertDialog.setMultiChoiceItems(0, booleans, (dialog, which, isChecked) -> {
+
+        });
+
+    }
     /**
      * 提示对话框
      */
@@ -71,6 +87,7 @@ public class MainActivity extends AppCompatActivity implements ScreenAutoTracker
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         /*Toolbar toolbar = new Toolbar(this);
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
@@ -79,8 +96,6 @@ public class MainActivity extends AppCompatActivity implements ScreenAutoTracker
             }
         });*/
         android.support.v7.widget.Toolbar toolbar =  findViewById(R.id.toolbar);
-
-
 
         toolbar.setTitle("Title");
         toolbar.setTitleTextColor(Color.YELLOW);

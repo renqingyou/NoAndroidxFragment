@@ -65,6 +65,23 @@ public class MyTabLayout extends AppCompatActivity {
 
             }
         });
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.BaseOnTabSelectedListener<CustomTabLayout>() {
+            @Override
+            public void onTabSelected(CustomTabLayout layout) {
+
+            }
+
+            @Override
+            public void onTabUnselected(CustomTabLayout tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(CustomTabLayout tab) {
+
+            }
+        });
         setContentView(tabLayout);
     }
 }
