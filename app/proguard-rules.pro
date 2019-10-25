@@ -26,3 +26,5 @@
 -keep class org.simalliance.openmobileapi.** {*;}
 -keep class org.simalliance.openmobileapi.service.** {*;}
 -keep class com.unionpay.** {*;}
+-keep class com.mob.**{*;}
+-dontwarn com.mob.**

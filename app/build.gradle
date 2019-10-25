@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.sensorsdata.analytics.android'
+apply plugin: 'com.mob.sdk'
 
 android {
     signingConfigs {
@@ -13,7 +14,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.renqingyou.noandroidxfragment"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -35,6 +36,15 @@ android {
 repositories {
     flatDir {
         dirs 'libs'
+    }
+}
+
+MobSDK {
+    appKey "d580ad56b4b5"
+    appSecret "7fcae59a62342e7e2759e9e397c82bdd"
+    MobLink {
+        uriScheme "您后台配置的scheme"
+        appLinkHost "您后台开启AppLink时生成的Host"
     }
 }
 

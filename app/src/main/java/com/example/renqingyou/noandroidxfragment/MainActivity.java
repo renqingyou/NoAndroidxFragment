@@ -10,6 +10,7 @@ import android.support.annotation.RequiresApi;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.SwitchCompat;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -95,6 +96,16 @@ public class MainActivity extends AppCompatActivity implements ScreenAutoTracker
                 return false;
             }
         });*/
+
+        PopupMenu popupMenu = new PopupMenu(this,getWindow().getDecorView());
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                return false;
+            }
+        });
+
+        popupMenu.setOnMenuItemClickListener(menuItem -> false);
         android.support.v7.widget.Toolbar toolbar =  findViewById(R.id.toolbar);
 
         toolbar.setTitle("Title");
