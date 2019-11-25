@@ -1,35 +1,35 @@
 package com.example.renqingyou.noandroidxfragment;
 
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
-import android.support.v7.app.ActionBar;
+
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.SwitchCompat;
-import android.support.v7.widget.Toolbar;
+
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CompoundButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.sensorsdata.analytics.android.sdk.ScreenAutoTracker;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.dynamiclinks.FirebaseDynamicLinks;
+import com.google.firebase.dynamiclinks.PendingDynamicLinkData;
+import com.sensorsdata.analytics.android.sdk.SensorsDataIgnoreTrackAppClick;
 import com.sensorsdata.analytics.android.sdk.SensorsDataTrackEvent;
 
-import org.json.JSONException;
-import org.json.JSONObject;
 
-
-public class MainActivity extends AppCompatActivity implements ScreenAutoTracker {
-
+public class MainActivity extends AppCompatActivity {
     public void testOnMultiChoiceClick(){
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
         boolean[] booleans = new boolean[2];
@@ -88,6 +88,35 @@ public class MainActivity extends AppCompatActivity implements ScreenAutoTracker
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        FirebaseDynamicLinks.getInstance()
+                .getDynamicLink(getIntent())
+                .addOnSuccessListener(this, new OnSuccessListener<PendingDynamicLinkData>() {
+                    @Override
+                    public void onSuccess(PendingDynamicLinkData pendingDynamicLinkData) {
+                        // Get deep link from result (may be null if no link is found)
+                        Uri deepLink = null;
+                        Log.e("rqy", "getDynamicLink:onFailure");
+                        if (pendingDynamicLinkData != null) {
+                            deepLink = pendingDynamicLinkData.getLink();
+                        }
+
+
+                        // Handle the deep link. For example, open the linked
+                        // content, or apply promotional credit to the user's
+                        // account.
+                        // ...
+
+                        // ...
+                    }
+                })
+                .addOnFailureListener(this, new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w("rqy", "getDynamicLink:onFailure", e);
+                    }
+                });
 
         /*Toolbar toolbar = new Toolbar(this);
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
@@ -197,6 +226,7 @@ public class MainActivity extends AppCompatActivity implements ScreenAutoTracker
         return super.onOptionsItemSelected(item);
     }
 
+
     public void popDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("问题：");
@@ -231,16 +261,4 @@ public class MainActivity extends AppCompatActivity implements ScreenAutoTracker
         builder.show();
     }
 
-    @Override
-    public String getScreenUrl() {
-        return null;
-    }
-
-    @Override
-    public JSONObject getTrackProperties() throws JSONException {
-        JSONObject message = new JSONObject();
-        //message.put("$title","TrackPropertiesTitle");
-        //message.put("$screen_url","TrackScreenURL");
-        return message;
-    }
 }

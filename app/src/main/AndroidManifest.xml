@@ -23,19 +23,19 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <data
                     android:host="debugmode"
-                    android:scheme="sad6a8b6a2" />
+                    android:scheme="sa0a03847f" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.BROWSABLE"/>
                 <category android:name="android.intent.category.DEFAULT"/>
-                <data android:host="visualized" android:scheme="sad6a8b6a2"/>
+                <data android:host="visualized" android:scheme="sa0a03847f"/>
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.BROWSABLE"/>
                 <category android:name="android.intent.category.DEFAULT"/>
-                <data android:host="heatmap" android:scheme="sad6a8b6a2"/>
+                <data android:host="heatmap" android:scheme="sa0a03847f"/>
             </intent-filter>
         </activity>
         <activity android:name=".MyTabLayout"/>
@@ -44,7 +44,16 @@
         <activity android:name=".NavigationViewActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"
             />
-        <activity android:name=".ViewPagerActivity"/>
+        <activity android:name=".ViewPagerActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data
+                    android:host="rqy.page.link"
+                    android:scheme="https"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

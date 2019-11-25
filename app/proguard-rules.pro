@@ -28,3 +28,19 @@
 -keep class com.unionpay.** {*;}
 -keep class com.mob.**{*;}
 -dontwarn com.mob.**
+
+-keep class com.alivc.player.**{*;}
+-keep class com.aliyun.clientinforeport.**{*;}
+-keep class com.aliyun.vodplayer.**{*;}
+-dontwarn com.alivc.player.**
+
+-keep class com.aliyun.alink.**{*;}
+-keep class com.aliyun.linksdk.**{*;}
+-dontwarn com.aliyun.**
+-dontwarn com.alibaba.**
+-dontwarn com.alipay.**
+-dontwarn com.ut.**
+
+-keep class com.alivc.player.**{*;}
+-keep class com.aliyun.clientinforeport.**{*;}
+-keep class com.aliyun.vodplayer.**{*;}
