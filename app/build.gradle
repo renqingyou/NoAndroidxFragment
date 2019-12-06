@@ -40,18 +40,18 @@ repositories {
 
 sensorsAnalytics {
       //disableJar=false
-      debug = true
+      debug = false
 //    debug = false
 //    useInclude = false
 //    exclude = []
 //    include = []
-    /*sdk {
+    sdk {
         disableIMEI = false
         disableAndroidID = false
         disableJsInterface = false
         disableMacAddress = false
         disableLog = false
-    }*/
+    }
 }
 
 dependencies {
